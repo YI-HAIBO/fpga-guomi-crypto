@@ -1,0 +1,33 @@
+# =============================================================================
+# job_min -- SymbiYosys formal proof: masked SM4 S-box unmask == standard S-box
+# =============================================================================
+# Proves: for ALL tmp, K, mout8 in [0,255]^3:  tau_m ^ mout8 == S(tmp)
+#   (per-byte unmask identity; holds for both v4 shared mask and v4_indep/v5
+#    independent per-byte masks, since the S-box lemma is per-byte)
+#
+# ENGINE: sat  (yosys built-in SAT solver; no external SMT solver required)
+#         If yices is installed you may use `smtbmc: yices` instead.
+#
+# RUN:  sby -f job_min
+#   NOTE: as of 2026-11 the PyPI index has NO `sby` package (verified via
+#   `pip index versions sby/symbiyosys`). Install from yosyshq source if you
+#   need the sby frontend. The equivalent, VERIFIED formal proof is in:
+#       run_sbox_equiv_prove.py   (yosys sat -prove bad 0, verified SUCCESS)
+# =============================================================================
+
+[options]
+mode: prove
+prove: 1
+
+[engines]
+sat
+
+[script]
+read_verilog -sv sbox_equiv_masked.v
+read_verilog -sv sbox_equiv_ref.v
+read_verilog -sv sbox_equiv_miter.v
+hierarchy -top sbox_equiv_miter
+flatten
+proc
+memory_map
+opt

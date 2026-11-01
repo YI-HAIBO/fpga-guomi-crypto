@@ -1,0 +1,6 @@
+=== TVLA (Welch t-test) : C:\Users\Yi\WorkBuddy\2026-10-02-09-55-51\fpga-guomi-crypto\sca_harness\data\scea_unmasked ===
+  traces (1000, 144) | fixed=500 random=500
+  threshold |t| > 4.50
+  max|t| = 26.796 at sample 112
+  samples exceeding threshold: 116 / 144
+  VERDICT: LEAK (fail)

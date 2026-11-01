@@ -1,0 +1,85 @@
+VCD info: dumpfile tb_bar_ctrl_v15.vcd opened for output.
+========================================================
+ bar_ctrl v1.5 Testbench - PCIe v0 Spec Alignment
+========================================================
+[               29000] Reset done
+
+[Test 1] Read-only registers
+  PASS: 1, MINOR=3, PATCH=0, BUILD=2026}
+  PASS:    FEATURE_FLAGS (0x010) = 0x3FF
+  PASS:       DEVICE_ID (0x014) = 0x0001
+  PASS:   SUBSYS_VENDOR (0x018) = 0x1234
+  PASS:       SUBSYS_ID (0x01C) = 0x0001
+
+[Test 2] Control registers + pulse outputs
+  PASS: (0x02C) readback = {rst=1, en=1}
+  PASS:           ctrl_trng_start pulsed
+  PASS:           ctrl_trng_stop  pulsed
+  PASS:           ctrl_trng_flush pulsed
+  PASS:       ctrl_trng_start deasserted
+  PASS:            ctrl_sm2_start pulsed
+  PASS:        ctrl_sm2_start deasserted
+  PASS:            ctrl_sm3_start pulsed
+  PASS:        ctrl_sm3_start deasserted
+  PASS:            ctrl_sm4_start pulsed
+  PASS:        ctrl_sm4_start deasserted
+
+[Test 3] Status registers
+  PASS: OBAL: cmd_busy=1, done_pending=1
+  PASS: NG: all pass, running=1 → 0x01
+  PASS: G: T1_FAIL=1, running=1 → 0x03
+  PASS: TUS_TRNG: T5_FAIL=1 → bit5 set
+  PASS: TUS_TRNG: T7_FAIL=1 → bit7 set
+  [DBG bar_ctrl] t=81000 err_src_vld=1 rid=0x22 code=0x02 idx= 0
+  PASS: TUS_ERR: err_flag=1 after inject
+
+[Test 4] Entropy counters
+  PASS: x058) = low 32 bits = 0xCAFEBABE
+  PASS: 05C) = high 32 bits = 0xDEADBEEF
+
+[Test 5] ERR_LOG 16 slots + ERR_LOG_HEAD
+  [DBG bar_ctrl] t=104000 err_src_vld=1 rid=0x01 code=0x01 idx= 0
+  PASS:  severity=INFO(0), errcode=0x001
+  [DBG bar_ctrl] t=114000 err_src_vld=1 rid=0x02 code=0x10 idx= 1
+  PASS:  severity=WARN(1), errcode=0x010
+  [DBG bar_ctrl] t=124000 err_src_vld=1 rid=0x03 code=0x40 idx= 2
+  PASS:  severity=CRIT(2), errcode=0x040
+  PASS: R_LOG_HEAD = 3 (after 3 injects)
+
+[Test 6] ERR_LOG_CLEAR (0x144)
+  PASS: _ERR flag still set before clear
+  PASS: ag preserved after ERR_LOG_CLEAR
+  PASS: _LOG[0] cleared by ERR_LOG_CLEAR
+  PASS: LOG_HEAD = 0 after ERR_LOG_CLEAR
+
+[Test 7] SCRATCH_REG
+  PASS:      SCRATCH_REG[0] = 0xAAAAAAAA
+  PASS:     SCRATCH_REG[63] = 0xBBBBBBBB
+
+[Test 8] Zero regression: old control registers (0x148-0x154)
+  PASS: rbell (0x148) triggers cmd_wr_en
+  PASS: bell (0x148) triggers ctrl_start
+  PASS: lush (0x14C) triggers ctrl_flush
+  PASS: ld reset (0x150) clears err_flag
+  PASS: old reset (0x150) clears err_log
+  [DBG bar_ctrl] t=181000 err_src_vld=1 rid=0x44 code=0x04 idx= 0
+  PASS:  clr_err (0x154) W1C clears flag
+
+[Test 9] Zero regression: old aliases (0x004, 0x200-0x21C)
+  PASS: TUS (0x004): cmd_full=1, ready=0
+  PASS: US (0x004): done_full=1, ready=1
+  [DBG bar_ctrl] t=211000 err_src_vld=1 rid=0x55 code=0x55 idx= 0
+  PASS: R_LOG alias (0x200) = err_log[0]
+
+[Test 10] Command shadow path
+  PASS:                   cmd_rid = 0x02
+  PASS:                    cmd_op  = 0x1
+  PASS:        cmd_ia[31:0] = 0xDEADBEEF
+
+========================================================
+ Test Summary
+   PASS : 46
+   FAIL : 0
+========================================================
+ ALL TESTS PASSED
+C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto\sim\subsys\tb_bar_ctrl_v15.v:456: $finish called at 327250 (1ps)

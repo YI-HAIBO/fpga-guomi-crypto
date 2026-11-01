@@ -1,0 +1,14 @@
+[options]
+mode: bmc
+prove: 1
+
+[engines]
+smtbmc: yices
+
+[script]
+read_verilog -sv sbox_equiv_top.v
+read_verilog -sv sbox_equiv_masked.v
+read_verilog -sv sbox_equiv_ref.v
+hierarchy -top sbox_equiv_top
+proc; opt; techmap; opt
+assert -cover 1.0

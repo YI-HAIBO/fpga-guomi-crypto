@@ -1,0 +1,24 @@
+{
+  "model": "masked",
+  "n_fixed": 600,
+  "n_random": 600,
+  "nsamples": 1200,
+  "leak_idx": 600,
+  "amp": 1.0,
+  "noise": 1.0,
+  "key": "0123456789ABCDEFFEDCBA9876543210",
+  "rk0": "F12186F9",
+  "target_word_bytes": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "seed": 20261025,
+  "leak_idxs": [
+    600,
+    675,
+    750,
+    825
+  ]
+}

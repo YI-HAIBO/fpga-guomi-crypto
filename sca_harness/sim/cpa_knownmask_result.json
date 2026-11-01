@@ -1,0 +1,14 @@
+{
+  "dump": "C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/sca_harness/sim/scea_det_dump.txt",
+  "n": 1000,
+  "true_rk0": "F12186F9",
+  "known_seed": {
+    "cycle": 18,
+    "rk0": "F12186F9",
+    "recovered": true
+  },
+  "phase_scan": {
+    "cycle": 18,
+    "hits": 1
+  }
+}

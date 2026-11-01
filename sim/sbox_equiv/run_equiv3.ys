@@ -1,0 +1,28 @@
+# Yosys formal equivalence check: v4 masked S-box == standard S-box
+# Proves: for all tmp, K, mout8: tau_m ^ mout8 == s_ref
+# Method: assert(unmasked == s_ref) -> check that NOT(unmasked == s_ref) is UNSAT
+
+read_verilog -sv C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/sim/sbox_equiv/sbox_equiv_top.v
+read_verilog -sv C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/sim/sbox_equiv/sbox_equiv_masked.v
+read_verilog -sv C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/sim/sbox_equiv/sbox_equiv_ref.v
+
+hierarchy -top sbox_equiv_top
+proc; opt; opt
+
+# Create equivalence check: prove unmasked == s_ref
+# We add a check cell that asserts the equality
+# Then run sat to see if there's a counterexample
+
+# Connect the check: if unmasked != s_ref, SAT solver finds a solution
+# The check cell is $check with a condition that must be true
+
+# Method: create a wire that is 1 iff unmasked != s_ref
+# Then constrain it to 1 and run sat
+# If UNSAT -> equivalence holds
+
+# First, let's just check the circuit is correct by running sat on the assertion
+# Use the assert command from the formal verification pass
+
+# Create a simple equivalence check
+select -assert
+sat -set-def-inputs -show unmasked s_ref

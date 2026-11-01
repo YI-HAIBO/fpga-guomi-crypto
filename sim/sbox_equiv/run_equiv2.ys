@@ -1,0 +1,6 @@
+read_verilog -sv C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/sim/sbox_equiv/sbox_equiv_top.v
+read_verilog -sv C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/sim/sbox_equiv/sbox_equiv_masked.v
+read_verilog -sv C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/sim/sbox_equiv/sbox_equiv_ref.v
+hierarchy -top sbox_equiv_top
+proc; opt; opt
+sat -set-unconstrained x -set-undef z -set-inputs 0 -prove unmasked == s_ref

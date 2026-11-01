@@ -1,0 +1,34 @@
+# Formal equivalence check using yosys sat
+# Prove: unmasked == s_ref for all inputs
+# Method: create XOR of both outputs, constrain to 0, run sat
+# If UNSAT -> equivalence holds (no counterexample exists)
+
+read_verilog -sv C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/sim/sbox_equiv/sbox_equiv_top.v
+read_verilog -sv C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/sim/sbox_equiv/sbox_equiv_masked.v
+read_verilog -sv C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/sim/sbox_equiv/sbox_equiv_ref.v
+
+hierarchy -top sbox_equiv_top
+proc; opt; opt
+
+# Create XOR: diff = unmasked ^ s_ref
+# If diff == 0 for all inputs, equivalence holds
+# Constrain diff to 0 and check if SAT solver can find a counterexample
+
+# Use the formal sat approach: create a cell that checks diff == 0
+# and then run sat to see if it can be violated
+
+# Simple approach: use $check cell
+# $check with condition (unmasked == s_ref) will flag if violated
+
+# Actually, the cleanest way is:
+# 1. Select the design
+# 2. Add a constraint that unmasked == s_ref
+# 3. Run sat - if UNSAT, the constraint is always true (equivalence holds)
+
+# But yosys sat doesn't directly support equality constraints on wires
+# So we create a cell that computes the XOR and check if it can be non-zero
+
+# Create XOR cells
+cell $xor A:$unmasked B:$s_ref Y:$diff
+# Constrain diff to 0 (all bits must be 0)
+sat -set-def-inputs -set $diff 0

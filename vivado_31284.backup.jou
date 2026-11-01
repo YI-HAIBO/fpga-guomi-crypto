@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Sun Nov  1 12:45:50 2026
+# Process ID         : 31284
+# Current directory  : C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto
+# Command line       : vivado.exe -mode batch -source C:/Users/Yi/WorkBuddy/2026-11-01-10-20-11/.workbuddy/tmp/vivado_build_v4indep.tcl -tclargs v4indep
+# Log file           : C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/vivado.log
+# Journal file       : C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto\vivado.jou
+# Running On         : Yi
+# Platform           : Windows 11
+# Operating System   : 26300
+# Processor Detail   : Intel(R) Core(TM) i5-14600KF
+# CPU Frequency      : 3494 MHz
+# CPU Physical cores : 14
+# CPU Logical cores  : 20
+# Host memory        : 68541 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 72836 MB
+# Available Virtual  : 22585 MB
+#-----------------------------------------------------------
+source C:/Users/Yi/WorkBuddy/2026-11-01-10-20-11/.workbuddy/tmp/vivado_build_v4indep.tcl

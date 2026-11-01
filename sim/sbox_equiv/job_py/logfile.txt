@@ -1,0 +1,2 @@
+SBY 20:38:56 [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/sim/sbox_equiv/job_py] Removing directory 'C:\Users\Yi\WorkBuddy\2026-10-02-09-55-51\fpga-guomi-crypto\sim\sbox_equiv\job_py'.
+SBY 20:38:56 [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/sim/sbox_equiv/job_py] ERROR: Missing mode. Please specify a `mode` in the [options] section.

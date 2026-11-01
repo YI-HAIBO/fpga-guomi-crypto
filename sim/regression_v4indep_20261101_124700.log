@@ -1,0 +1,16 @@
+# Regression v4_indep + TRNG v3  20261101_124700
+# DUT: sm4_engine_masked_v4_indep (USE_SM4_MASKED=2)
+# TRNG: trng_sm3_v3 (真 RO 熵源, P0-6 方案2)
+# Board: gm_crypto_board_v15 / pcie_front_subsys_v15
+
+[COMPILE_FAIL] sm4_enc_dec_v4: C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto\sim/sm4/tb_sm4_engine_masked_v4.v:28: error: Unknown module type: sm4_engine_masked_v4
+[UNKNOWN     ] sm3_engine:    PASS: 3 |    FAIL: 0 | ======================================================== |  ALL TESTS PASSED | C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto\sim/sm3/tb_sm3.v:178: $finish called at 7595000 (1ps)
+[UNKNOWN     ] sm3_engine_masked:    PASS: 4 |    FAIL: 0 | ======================================================== |  ALL TESTS PASSED | C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto\sim/sm3/tb_sm3_engine_masked.v:246: $finish called at 24815000 (1ps)
+[PASS        ] sm2_sign: ntest=30 npass=30 nfail=0
+[UNKNOWN     ] trng_health_v3:   PASS  T9b pass recovered on good stream |   PASS  T9c fail stays latched |   PASS  T9d reset clears fail | ALL TESTS PASSED | C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto\sim/trng/tb_trng_health_test_v3.v:418: $finish called at 237536000 (1ps)
+[UNKNOWN     ] trng_sm3:    PASS : 8 |    FAIL : 0 | ======================================================== |  ALL TESTS PASSED | C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto\sim/trng/tb_trng_sm3.v:373: $finish called at 145624750 (1ps)
+[PASS        ] crypto_coord_v4: ntest=16 npass=16 nfail=0
+[COMPILE_FAIL] e2e_v15: C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto\rtl/sm4/sm4_sbox_masked.v:53: error: 'sm4_sbox_masked' has already been declared in this s | C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto\rtl/sm4/sm4_sbox_raw.v:10: error: 'sm4_sbox_raw' has already been declared in this scope. | C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto\rtl/sm4/sm4_sbox_table_masked.v:58:
+
+SUMMARY: 2 PASS, 0 FAIL, 0 SKIP, 6 UNKNOWN
+OVERALL: FAIL

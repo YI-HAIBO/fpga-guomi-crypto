@@ -1,0 +1,256 @@
+{
+  "description": "Mask Residual Strength vs Injection Amplitude (simulation v2)",
+  "method": "alpha = attacker mask knowledge per trace; 0=uniform random guess, 1=always correct",
+  "alphas": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "mrs": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "tvla_max_t": [
+    4.0021,
+    4.0021,
+    4.0021,
+    4.0021,
+    4.0021,
+    4.0021,
+    4.0021,
+    4.0021,
+    4.0021,
+    4.0021,
+    4.0021
+  ],
+  "cpa_recovered": [
+    0,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "details": [
+    {
+      "alpha": 0.0,
+      "tvla_max_t": 4.0021,
+      "tvla_leak": false,
+      "tvla_leak_points": 0,
+      "cpa_recovered": 0,
+      "cpa_ge_byte0": {
+        "25": 243,
+        "50": 235,
+        "100": 239,
+        "200": 143,
+        "500": 37,
+        "1000": 143,
+        "2000": 57,
+        "10000": 230
+      },
+      "mrs": 1.0
+    },
+    {
+      "alpha": 0.1,
+      "tvla_max_t": 4.0021,
+      "tvla_leak": false,
+      "tvla_leak_points": 0,
+      "cpa_recovered": 4,
+      "cpa_ge_byte0": {
+        "25": 211,
+        "50": 193,
+        "100": 217,
+        "200": 157,
+        "500": 129,
+        "1000": 91,
+        "2000": 19,
+        "10000": 1
+      },
+      "mrs": 0.0
+    },
+    {
+      "alpha": 0.2,
+      "tvla_max_t": 4.0021,
+      "tvla_leak": false,
+      "tvla_leak_points": 0,
+      "cpa_recovered": 4,
+      "cpa_ge_byte0": {
+        "25": 211,
+        "50": 119,
+        "100": 45,
+        "200": 177,
+        "500": 105,
+        "1000": 9,
+        "2000": 7,
+        "10000": 1
+      },
+      "mrs": 0.0
+    },
+    {
+      "alpha": 0.3,
+      "tvla_max_t": 4.0021,
+      "tvla_leak": false,
+      "tvla_leak_points": 0,
+      "cpa_recovered": 4,
+      "cpa_ge_byte0": {
+        "25": 91,
+        "50": 31,
+        "100": 16,
+        "200": 153,
+        "500": 39,
+        "1000": 15,
+        "2000": 7,
+        "10000": 1
+      },
+      "mrs": 0.0
+    },
+    {
+      "alpha": 0.4,
+      "tvla_max_t": 4.0021,
+      "tvla_leak": false,
+      "tvla_leak_points": 0,
+      "cpa_recovered": 4,
+      "cpa_ge_byte0": {
+        "25": 185,
+        "50": 11,
+        "100": 18,
+        "200": 61,
+        "500": 13,
+        "1000": 5,
+        "2000": 6,
+        "10000": 1
+      },
+      "mrs": 0.0
+    },
+    {
+      "alpha": 0.5,
+      "tvla_max_t": 4.0021,
+      "tvla_leak": false,
+      "tvla_leak_points": 0,
+      "cpa_recovered": 4,
+      "cpa_ge_byte0": {
+        "25": 185,
+        "50": 11,
+        "100": 18,
+        "200": 17,
+        "500": 3,
+        "1000": 1,
+        "2000": 3,
+        "10000": 1
+      },
+      "mrs": 0.0
+    },
+    {
+      "alpha": 0.6,
+      "tvla_max_t": 4.0021,
+      "tvla_leak": false,
+      "tvla_leak_points": 0,
+      "cpa_recovered": 4,
+      "cpa_ge_byte0": {
+        "25": 217,
+        "50": 149,
+        "100": 23,
+        "200": 9,
+        "500": 3,
+        "1000": 4,
+        "2000": 3,
+        "10000": 1
+      },
+      "mrs": 0.0
+    },
+    {
+      "alpha": 0.7,
+      "tvla_max_t": 4.0021,
+      "tvla_leak": false,
+      "tvla_leak_points": 0,
+      "cpa_recovered": 4,
+      "cpa_ge_byte0": {
+        "25": 215,
+        "50": 90,
+        "100": 12,
+        "200": 13,
+        "500": 5,
+        "1000": 3,
+        "2000": 3,
+        "10000": 1
+      },
+      "mrs": 0.0
+    },
+    {
+      "alpha": 0.8,
+      "tvla_max_t": 4.0021,
+      "tvla_leak": false,
+      "tvla_leak_points": 0,
+      "cpa_recovered": 4,
+      "cpa_ge_byte0": {
+        "25": 251,
+        "50": 141,
+        "100": 27,
+        "200": 18,
+        "500": 5,
+        "1000": 3,
+        "2000": 1,
+        "10000": 1
+      },
+      "mrs": 0.0
+    },
+    {
+      "alpha": 0.9,
+      "tvla_max_t": 4.0021,
+      "tvla_leak": false,
+      "tvla_leak_points": 0,
+      "cpa_recovered": 4,
+      "cpa_ge_byte0": {
+        "25": 73,
+        "50": 47,
+        "100": 17,
+        "200": 15,
+        "500": 5,
+        "1000": 5,
+        "2000": 3,
+        "10000": 1
+      },
+      "mrs": 0.0
+    },
+    {
+      "alpha": 1.0,
+      "tvla_max_t": 4.0021,
+      "tvla_leak": false,
+      "tvla_leak_points": 0,
+      "cpa_recovered": 4,
+      "cpa_ge_byte0": {
+        "25": 157,
+        "50": 25,
+        "100": 7,
+        "200": 7,
+        "500": 5,
+        "1000": 2,
+        "2000": 3,
+        "10000": 1
+      },
+      "mrs": 0.0
+    }
+  ]
+}

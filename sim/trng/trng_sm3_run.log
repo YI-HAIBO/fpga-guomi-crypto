@@ -1,0 +1,52 @@
+VCD info: dumpfile trng_sm3.vcd opened for output.
+========================================================
+ TRNG+SM3 DRBG Testbench -                    0
+========================================================
+[               29000] Reset done
+
+[Test 1] Single request, non-zero output
+  sample = 0xb4ba09f6c5c1249c091ec155442cea96
+  cycles = 379
+  PASS: Output is non-zero
+
+[Test 2] 10 back-to-back requests, all different
+  [00] 0x0ee08f70f9d011f294c63c11a66cabaf
+  [01] 0x9a7b1741fdef6b11871d03f51a4663f4
+  [02] 0x804dbe0f2586fc8a5437efa8398d70e5
+  [03] 0x28a4d509ce954b07c656f9a4f0de6711
+  [04] 0x5feb9eaf6760cc4bec187fc0651962ea
+  [05] 0x35132f33b754a30e503fea04a9f8b8cb
+  [06] 0x8dcb28d175a61eff7511d5406c682f95
+  [07] 0x3df2cbba6658da9eab91f06312bc4aa7
+  [08] 0xc6509343656870d4e966b9d4ebfdec70
+  [09] 0xf8fdcb0bb61cd4ed1c56840df49c2103
+  PASS: All 10 outputs are distinct
+
+[Test 3] Pattern check: no 'first 3 words repeat'
+  PASS: 0/20 outputs have repeat pattern
+
+[Test 4] 100-request stability
+  PASS: All 100 requests produced non-zero output
+
+[Test 5] v1.0 vs v2.0 comparison (20 samples)
+  v2.0 (SM3 DRBG): 0/20 repeat patterns
+  PASS: SM3 DRBG eliminated repeat pattern defect
+
+[Test 6] Error code check
+  PASS: err_code = 0x0 (normal)
+
+[Test 7] HT failure inject -> err_code == 0x01
+  PASS: err_code hit 0x01 after 130 cycles
+
+[Test 8] DUT recovers after force release
+  PASS: post-fault request ok, out=0x88494dbaecd2d0574beb0a920d45339d
+
+========================================================
+ Test Summary
+   PASS : 8
+   FAIL : 0
+========================================================
+ ALL TESTS PASSED
+C:\Users\Yi\WorkBuddy\2026-10-02-09-55-51\fpga-guomi-crypto\sim\trng\tb_trng_sm3.v:373: $finish called at 145624750 (1ps)
+
+--- STDERR ---

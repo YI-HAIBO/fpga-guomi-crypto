@@ -1,0 +1,80 @@
+INFO: [Common 17-3922] A valid Vivado Design Suite BASIC license has been detected. Your current license is active and will expire on 26-sep-2027.
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Sun Nov  1 12:44:58 2026
+# Process ID         : 24516
+# Current directory  : C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto
+# Command line       : vivado.exe -mode batch -source C:/Users/Yi/WorkBuddy/2026-11-01-10-20-11/.workbuddy/tmp/vivado_build_v4indep.tcl -tclargs v4indep
+# Log file           : C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/vivado.log
+# Journal file       : C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto\vivado.jou
+# Running On         : Yi
+# Platform           : Windows 11
+# Operating System   : 26300
+# Processor Detail   : Intel(R) Core(TM) i5-14600KF
+# CPU Frequency      : 3494 MHz
+# CPU Physical cores : 14
+# CPU Logical cores  : 20
+# Host memory        : 68541 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 72836 MB
+# Available Virtual  : 24885 MB
+#-----------------------------------------------------------
+source C:/Users/Yi/WorkBuddy/2026-11-01-10-20-11/.workbuddy/tmp/vivado_build_v4indep.tcl
+# set proj_name [lindex $argv 0]
+# if {$proj_name eq ""} { set proj_name "v4indep" }
+# set files {
+#     rtl/common/mask_gen_lfsr.v
+#     rtl/gm_crypto_top.v
+#     rtl/sm2/sm2_jacaffx.v
+#     rtl/sm2/sm2_mm_arb.v
+#     rtl/sm2/sm2_modarith.v
+#     rtl/sm2/sm2_modinv.v
+#     rtl/sm2/sm2_montmul.v
+#     rtl/sm2/sm2_ninv.v
+#     rtl/sm2/sm2_nm_arb.v
+#     rtl/sm2/sm2_nmul.v
+#     rtl/sm2/sm2_nmul_rand.v
+#     rtl/sm2/sm2_pmul.v
+#     rtl/sm2/sm2_pmul_windowed.v
+#     rtl/sm2/sm2_point_add_v3.v
+#     rtl/sm2/sm2_sign.v
+#     rtl/sm3/sm3_engine.v
+#     rtl/sm3/sm3_engine_masked.v
+#     rtl/sm4/sm4_engine.v
+#     rtl/sm4/sm4_engine_masked_v4_indep.v
+#     rtl/sm4/sm4_engine_sys.v
+#     rtl/sm4/sm4_engine_sys_masked_wrapper.v
+#     rtl/sm4/sm4_engine_sys_multi.v
+#     rtl/sm4/sm4_sbox_masked.v
+#     rtl/sm4/sm4_sbox_raw.v
+#     rtl/sm4/sm4_sbox_table_masked.v
+#     rtl/subsys/arbiter.v
+#     rtl/subsys/bar_ctrl.v
+#     rtl/subsys/cmd_parser.v
+#     rtl/subsys/cmd_queue_buf.v
+#     rtl/subsys/cmd_ring_buf.v
+#     rtl/subsys/crypto_coord_subsys.v
+#     rtl/subsys/crypto_sched_subsys.v
+#     rtl/subsys/desc_ring_buf.v
+#     rtl/subsys/dma_desc_engine.v
+#     rtl/subsys/gm_crypto_board_v15.v
+#     rtl/subsys/msix_ctrl.v
+#     rtl/subsys/pcie_front_subsys_v15.v
+#     rtl/subsys/pcie_sys_wrap.v
+#     rtl/subsys/prio_queue.v
+#     rtl/subsys/ring_ctrl.v
+#     rtl/subsys/sm3_sm2_pipe.v
+#     rtl/subsys/sm4_trng_subsys.v
+#     rtl/trng/trng_health_test_v3.v
+#     rtl/trng/trng_monitor.v
+#     rtl/trng/trng_sm3_v3.v
+# }
+# set proj_dir "C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/.workbuddy/tmp/vivado_v4indep"
+# file delete -force $proj_dir
+# file mkdir $proj_dir
+# create_project -part xc7a200tsbg484-2 -name ${proj_name} -path $proj_dir
+ERROR: [Common 17-170] Unknown option '-path', please type 'create_project -help' for usage info.
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  1 12:45:04 2026...

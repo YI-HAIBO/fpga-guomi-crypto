@@ -1,0 +1,39 @@
+# =============================================================================
+# job_sbox_equiv.sby -- SymbiYosys formal proof: masked SM4 S-box == standard S-box
+# =============================================================================
+# PROVES:  for ALL tmp, K, mout8 in [0,255]^3 :  tau_m ^ mout8 == S(tmp)
+#   where  tau_m = masked S-box output = S(tmp) ^ mout8   (unmask => S(tmp))
+#
+#   Scope note: this is the *per-byte* S-box unmask lemma. Both the v4 engine
+#   (single shared mout8 across 4 bytes) and the v4_indep / v5 engine (four
+#   independent mout8[0..3]) satisfy this same per-byte identity; v4 vs v5
+#   differ at the 32-bit layer (shared vs independent masking), not in this
+#   S-box lemma. See docs/CURRENT_STATE.md for the version map.
+#
+# ENGINE:  sat  (yosys built-in SAT; NO external SMT solver needed)
+#          If yices is installed, `smtbmc: yices` also works.
+#
+# RUN:     sby -f job_sbox_equiv.sby
+#   NOTE:  as of 2026-11 the PyPI index exposes NO `sby` package (verified:
+#          `pip index versions sby` / `symbiyosys` -> "No matching distribution").
+#          Install SymbiYosys from yosyshq source if the sby frontend is needed.
+#          The equivalent formal proof, VERIFIED PASS, is:
+#              python run_sbox_equiv_prove.py     (yosys `sat -prove bad 0`)
+# =============================================================================
+
+[options]
+mode: prove
+prove: 1
+
+[engines]
+sat
+
+[script]
+read_verilog -sv sbox_equiv_masked.v
+read_verilog -sv sbox_equiv_ref.v
+read_verilog -sv sbox_equiv_miter.v
+hierarchy -top sbox_equiv_miter
+flatten
+proc
+memory_map
+opt

@@ -1,0 +1,55 @@
+==============================================
+  bar_ctrl v2.0 测试平台 (tb_bar_ctrl_v20)
+==============================================
+=== T1: 复位 + VERSION ===
+  PASS: VERSION=0x000107ea
+=== T2: BAR0 只读寄存器 ===
+  PASS: FEATURE_FLAGS=0x000003ff
+  PASS: DEVICE_ID=0x00000001
+  PASS: SUBSYS_VENDOR=0x00001234
+  PASS: SUBSYS_ID=0x00000001
+  PASS: 只读寄存器写入无效
+=== T3: BAR0 控制寄存器 ===
+  PASS: CTRL_GLOBAL 回读=0x00000003
+  PASS: TRNG 控制脉冲正确 (start=1 stop=1 flush=1)
+  PASS: CTRL_TRNG 回读=0x00000007
+  PASS: SM2 控制脉冲正确
+  PASS: CTRL_SM2 回读=0x00000001
+=== T4: BAR0 状态寄存器 ===
+  PASS: STATUS_GLOBAL=0x0000000c
+  PASS: STATUS_TRNG=0x00000001
+  PASS: STATUS_ERR=0x00000000
+=== T5: BAR0 熵计数 ===
+  PASS: ENTROPY_CNT_LO=0xcafe1234
+  PASS: ENTROPY_CNT_HI=0xdeadbeef
+=== T6: BAR0 ERR_LOG ===
+  PASS: err_log[0]=0x00100021
+  PASS: ERR_LOG_HEAD= 1
+  PASS: ERR_LOG_CLEAR 清空成功
+=== T7: BAR0 SCRATCH_REG ===
+  PASS: scratch[0]=0xaaaa0000
+  PASS: scratch[1]=0xbbbb0000
+  PASS: scratch[62]=0xcccc0000
+  PASS: scratch[63]=0xdddd0000
+=== T8: BAR1 命令环写入 ===
+  PASS: cmd_ring_wr_en=1
+  PASS: cmd_ring_wr_idx=0
+  PASS: cmd_ring_wr_entry[31:0]=0xdeadbeef
+  PASS: cmd_ring_wr_entry[127:96]=0x00000200
+  PASS: cmd_ring_head_wr_en=1, ptr=1
+=== T9: BAR1 描述符环写入 ===
+  PASS: desc_ring_wr_en=1
+  PASS: desc_ring_wr_entry[31:0]=0xcafe0000
+  PASS: desc_ring_head_wr_en=1, ptr=2
+=== T10: MSI-X 触发 ===
+  PASS: cmd_ring_avail → MSI-X 向量 0
+  PASS: err_src_vld(WARN) → MSI-X 向量 3
+  PASS: err_src_vld(CRIT) → MSI-X 向量 4
+=== T11: 零回归 ===
+  FAIL: CMD_RING_STATUS=0001050a (期望 0x0000050A)
+  FAIL: DESC_RING_STATUS=00010f14 (期望 0x00000F14)
+==============================================
+  结果: 34 PASS, 2 FAIL
+==============================================
+  *** 2 TEST(S) FAILED ***
+c:\Users\Yi\WorkBuddy\2026-10-02-09-55-51\fpga-guomi-crypto\sim/subsys/tb_bar_ctrl_v20.v:641: $finish called at 790000 (1ps)

@@ -1,0 +1,50 @@
+==============================================
+  desc_ring_buf 测试平台 (tb_desc_ring_buf)
+  DEPTH=256, PTR_W=8, CNT_W=9
+==============================================
+=== T1: 复位行为 ===
+  PASS: 复位状态正确
+=== T2: 基本写读 ===
+  PASS: desc_avail=1, desc_lvl=1
+  PASS: desc_id=deadbeef
+  PASS: batch_op=30
+  PASS: batch_flags=01
+  PASS: batch_count=  500
+  PASS: input_desc_addr=00001000
+  PASS: output_desc_addr=00002000
+  PASS: 消费后 desc_avail=0, desc_lvl=0
+=== T3: 多条写入 (5 条) ===
+  PASS: desc_avail=1, desc_lvl=5
+  PASS: 队头 desc_id=10000000
+  PASS: 消费 3 条后 desc_lvl=2
+  PASS: 消费全部后 desc_avail=0, desc_lvl=0
+=== T4: 环满检测 ===
+  PASS: 255 条时 desc_full=1
+  PASS: desc_lvl=255
+  PASS: 写第 256 条后 desc_full 仍为 1
+=== T5: 环空检测 ===
+  PASS: 消费后环空
+  PASS: 空环 desc_full=0
+=== T6: desc_lvl 精度 ===
+  PASS: 10 条 → desc_lvl=10
+  PASS: 消费 7 条 → desc_lvl=3
+  PASS: 再写 5 条 → desc_lvl=8
+  PASS: 消费全部 → desc_lvl=0
+=== T7: 环绕 ===
+  PASS: 消费 10 条 → desc_lvl=245
+  PASS: 环绕写入后 desc_lvl=255
+  PASS: 环绕消费全部 → 环空
+=== T8: 字段解包边界值 ===
+  PASS: 全 0 解包正确
+  PASS: 全 1 解包正确
+  PASS: 0xAAAA 解包正确
+  PASS: 0x5555 解包正确
+=== T9: batch_op 编码 ===
+  PASS: 12 种 batch_op 全部正确
+=== T10: 零回归 ===
+  PASS: 零回归全部通过 (desc_lvl 始终自洽)
+==============================================
+  结果: 31 PASS, 0 FAIL
+==============================================
+  *** ALL TESTS PASSED ***
+c:\Users\Yi\WorkBuddy\2026-10-02-09-55-51\fpga-guomi-crypto\sim\subsys\tb_desc_ring_buf.v:714: $finish called at 10920000 (1ps)

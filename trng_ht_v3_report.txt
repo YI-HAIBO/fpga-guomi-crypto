@@ -1,0 +1,91 @@
+=====================================================
+ TRNG HEALTH TEST v3.0 (NIST SP 800-90B) REPORT
+=====================================================
+CLK_HALF=5 ps  WIN=1024  N_GOOD=4096
+V2 thresholds: ones[468,556] sumsq[4170,4620]
+              corr[444,579] max_run[0,23]
+V3 thresholds: runs[477,547] |S|max[0,105] sumsq_bd[100,172]
+Status [6:0]: BD, CumSum, Runs, Prop, Poker, Corr, Longruns
+
+[T0] reset self-check
+  PASS  T0a pass=1
+  PASS  T0b fail=0
+  PASS  T0c win=0
+  PASS  T0d status_win=0
+
+[T1] good stream (16-bit LFSR): 4096 bits = 4 windows
+  windows completed = 4 / 4   all-pass windows = 4
+  win[0] status=1111111 ones=519 sumsq=4214 corr=496 maxrun=9 runs=527 cmax=53 ssum=134
+  win[1] status=1111111 ones=492 sumsq=4340 corr=487 maxrun=10 runs=536 cmax=48 ssum=120
+  win[2] status=1111111 ones=523 sumsq=4204 corr=517 maxrun=8 runs=506 cmax=36 ssum=126
+  win[3] status=1111111 ones=500 sumsq=4298 corr=512 maxrun=9 runs=511 cmax=31 ssum=140
+  PASS  T1a all 4 windows completed
+  PASS  T1b at least 3 of 4 all-pass
+
+[T2] frozen stream (all 1)
+  windows = 1   status_win = 0000000  (expect prop/corr/longruns/runs/bd fail)
+  PASS  T2a window completed
+  PASS  T2b pass=0
+  PASS  T2c fail=1
+  PASS  T2d proportion hit
+  PASS  T2e correlation hit
+  PASS  T2f longruns hit
+  PASS  T2g T5 runs hit
+  PASS  T2h T7 bitdist hit
+
+[T3] biased stream (62.5% ones)
+  status_win = 0000001
+  PASS  T3a pass=0
+  PASS  T3b fail=1
+  PASS  T3c proportion hit
+
+[T4] period-2 stream (0101...)
+  status_win = 0101001  cmax_snap=1  corr_snap=1023  runs_snap=0  ssum_snap=1024
+  PASS  T4a poker fail
+  PASS  T4b correlation fail
+  PASS  T4c T5 runs fail
+  PASS  T4e T7 bitdist fail
+  PASS  T4f T6 cumsum pass (|S|=1 bounded)
+  PASS  T4g pass=0
+
+[T5] cumsum-targeted stream (200 zero + 824 one)
+  status_win = 0000000  cmax_snap=640  corr_snap=1  runs_snap=1022  ssum_snap=712
+  PASS  T5a pass=0
+  PASS  T5b fail=1
+  PASS  T5c T6 cumsum hit
+  PASS  T5d |S|max exceeds threshold
+
+[T6] all-zero stream (period-1)
+  status_win = 0000000
+  PASS  T6a pass=0
+  PASS  T6b fail=1
+  PASS  T6c T5 runs hit
+  PASS  T6d T6 cumsum hit
+  PASS  T6e T7 bitdist hit
+  PASS  T6f longruns hit
+
+[T7] segmented requests (L1 regression): 32 seg x 128 bit, gap=32
+  windows = 4
+  PASS  T7a v3 forms windows across request gaps
+
+[T8] E1 production entropy (RO xor) - 4 windows
+  win[0] status=1111111 ones=494 sumsq=4372 corr=484 maxrun=11 runs=539 cmax=55 ssum=124
+  win[1] status=1111111 ones=516 sumsq=4214 corr=481 maxrun=9 runs=542 cmax=16 ssum=146
+  win[2] status=1111111 ones=547 sumsq=4306 corr=484 maxrun=10 runs=539 cmax=76 ssum=120
+  win[3] status=1101111 ones=514 sumsq=4390 corr=459 maxrun=13 runs=564 cmax=21 ssum=128
+  PASS  T8a health test completes windows on RO stream
+  PASS  T8b health test ACCEPTS RO stream (>=3 of 4 windows pass)
+
+[T9] fail latching
+  after frozen window: fail=1 pass=0
+  PASS  T9a fail latched
+  after good stream: fail=1 pass=1 pass_seen=1
+  PASS  T9b pass recovered on good stream
+  PASS  T9c fail stays latched
+  PASS  T9d reset clears fail
+
+=====================================================
+ SUMMARY
+=====================================================
+FAIL = 0
+ ALL TESTS PASSED

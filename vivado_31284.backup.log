@@ -1,0 +1,2132 @@
+INFO: [Common 17-3922] A valid Vivado Design Suite BASIC license has been detected. Your current license is active and will expire on 26-sep-2027.
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Sun Nov  1 12:45:50 2026
+# Process ID         : 31284
+# Current directory  : C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto
+# Command line       : vivado.exe -mode batch -source C:/Users/Yi/WorkBuddy/2026-11-01-10-20-11/.workbuddy/tmp/vivado_build_v4indep.tcl -tclargs v4indep
+# Log file           : C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/vivado.log
+# Journal file       : C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto\vivado.jou
+# Running On         : Yi
+# Platform           : Windows 11
+# Operating System   : 26300
+# Processor Detail   : Intel(R) Core(TM) i5-14600KF
+# CPU Frequency      : 3494 MHz
+# CPU Physical cores : 14
+# CPU Logical cores  : 20
+# Host memory        : 68541 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 72836 MB
+# Available Virtual  : 22585 MB
+#-----------------------------------------------------------
+source C:/Users/Yi/WorkBuddy/2026-11-01-10-20-11/.workbuddy/tmp/vivado_build_v4indep.tcl
+# set proj_name [lindex $argv 0]
+# if {$proj_name eq ""} { set proj_name "v4indep" }
+# set files {
+#     rtl/common/mask_gen_lfsr.v
+#     rtl/gm_crypto_top.v
+#     rtl/sm2/sm2_jacaffx.v
+#     rtl/sm2/sm2_mm_arb.v
+#     rtl/sm2/sm2_modarith.v
+#     rtl/sm2/sm2_modinv.v
+#     rtl/sm2/sm2_montmul.v
+#     rtl/sm2/sm2_ninv.v
+#     rtl/sm2/sm2_nm_arb.v
+#     rtl/sm2/sm2_nmul.v
+#     rtl/sm2/sm2_nmul_rand.v
+#     rtl/sm2/sm2_pmul.v
+#     rtl/sm2/sm2_pmul_windowed.v
+#     rtl/sm2/sm2_point_add_v3.v
+#     rtl/sm2/sm2_sign.v
+#     rtl/sm3/sm3_engine.v
+#     rtl/sm3/sm3_engine_masked.v
+#     rtl/sm4/sm4_engine.v
+#     rtl/sm4/sm4_engine_masked_v4_indep.v
+#     rtl/sm4/sm4_engine_sys.v
+#     rtl/sm4/sm4_engine_sys_masked_wrapper.v
+#     rtl/sm4/sm4_engine_sys_multi.v
+#     rtl/sm4/sm4_sbox_masked.v
+#     rtl/sm4/sm4_sbox_raw.v
+#     rtl/sm4/sm4_sbox_table_masked.v
+#     rtl/subsys/arbiter.v
+#     rtl/subsys/bar_ctrl.v
+#     rtl/subsys/cmd_parser.v
+#     rtl/subsys/cmd_queue_buf.v
+#     rtl/subsys/cmd_ring_buf.v
+#     rtl/subsys/crypto_coord_subsys.v
+#     rtl/subsys/crypto_sched_subsys.v
+#     rtl/subsys/desc_ring_buf.v
+#     rtl/subsys/dma_desc_engine.v
+#     rtl/subsys/gm_crypto_board_v15.v
+#     rtl/subsys/msix_ctrl.v
+#     rtl/subsys/pcie_front_subsys_v15.v
+#     rtl/subsys/pcie_sys_wrap.v
+#     rtl/subsys/prio_queue.v
+#     rtl/subsys/ring_ctrl.v
+#     rtl/subsys/sm3_sm2_pipe.v
+#     rtl/subsys/sm4_trng_subsys.v
+#     rtl/trng/trng_health_test_v3.v
+#     rtl/trng/trng_monitor.v
+#     rtl/trng/trng_sm3_v3.v
+# }
+# set proj_dir "C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/.workbuddy/tmp/vivado_v4indep"
+# file delete -force $proj_dir
+# file mkdir $proj_dir
+# create_project -part xc7a200tsbg484-2 $proj_name $proj_dir
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 760.758 ; gain = 270.789
+# set_property target_language Verilog [current_project]
+# foreach f $files {
+#     if {![file exists "C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/$f"]} {
+#         puts "WARNING: missing $f"
+#         continue
+#     }
+#     add_files -fileset sources_1 [list "C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/$f"]
+# }
+# set_property top gm_crypto_board_v15 [current_fileset]
+# set xdc_dir "C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints"
+# set xdc_files {
+#     nysa7_board_v15.xdc
+#     nysa7_board_v15_min.xdc
+#     clk_l400.xdc
+#     rst.xdc
+#     tdc.xdc
+#     io_placeholder.xdc
+# }
+# foreach f $xdc_files {
+#     set p "$xdc_dir/$f"
+#     if {[file exists $p]} {
+#         add_files -fileset constrs_1 [list $p]
+#         puts "added constraint: $f"
+#     } else {
+#         puts "WARNING: missing constraint $f"
+#     }
+# }
+added constraint: nysa7_board_v15.xdc
+added constraint: nysa7_board_v15_min.xdc
+added constraint: clk_l400.xdc
+added constraint: rst.xdc
+CRITICAL WARNING: [Vivado 12-3645] Please note that adding or importing multiple files, one at a time, can be performance intensive.  Both add_files and import_files commands accept multiple files as input, and passing a collection of multiple files to a single add_files or import_files commands can offer significant performance improvement.
+added constraint: tdc.xdc
+added constraint: io_placeholder.xdc
+# update_compile_order -fileset sources_1
+# puts "=== SYNTHESIS START [clock format [clock seconds] -format %H:%M:%S] ==="
+=== SYNTHESIS START 12:46:05 ===
+# synth_design -top gm_crypto_board_v15 -part xc7a200tsbg484-2
+Command: synth_design -top gm_crypto_board_v15 -part xc7a200tsbg484-2
+Starting synth_design
+Attempting to get a license for feature 'Vivado_Synthesis' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Vivado_Synthesis' and/or device 'xc7a200t'
+INFO: [Device 21-403] Loading part xc7a200tsbg484-2
+INFO: [Designutils 20-5008] Incremental synthesis strategy default
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 30196
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1575.676 ; gain = 578.805
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6901] identifier 'e0_needs_retry' is used before its declaration [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/crypto_sched_subsys.v:215]
+WARNING: [Synth 8-6901] identifier 'e0_needs_retry' is used before its declaration [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/crypto_sched_subsys.v:250]
+WARNING: [Synth 8-6901] identifier 'e0_cmd_idx_l' is used before its declaration [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/crypto_sched_subsys.v:253]
+INFO: [Synth 8-6157] synthesizing module 'gm_crypto_board_v15' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/gm_crypto_board_v15.v:69]
+INFO: [Synth 8-6157] synthesizing module 'pcie_front_subsys' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:45]
+	Parameter USE_SM4_MASKED bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'bar_ctrl' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/bar_ctrl.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'bar_ctrl' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/bar_ctrl.v:66]
+INFO: [Synth 8-6157] synthesizing module 'trng_monitor' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/trng/trng_monitor.v:83]
+INFO: [Synth 8-6157] synthesizing module 'trng_entropy' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/trng/trng_sm3_v3.v:574]
+INFO: [Synth 8-6157] synthesizing module 'ro11' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/trng/trng_sm3_v3.v:453]
+INFO: [Synth 8-6155] done synthesizing module 'ro11' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/trng/trng_sm3_v3.v:453]
+INFO: [Synth 8-6157] synthesizing module 'ro9' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/trng/trng_sm3_v3.v:489]
+INFO: [Synth 8-6155] done synthesizing module 'ro9' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/trng/trng_sm3_v3.v:489]
+INFO: [Synth 8-6157] synthesizing module 'ro7' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/trng/trng_sm3_v3.v:521]
+INFO: [Synth 8-6155] done synthesizing module 'ro7' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/trng/trng_sm3_v3.v:521]
+INFO: [Synth 8-6155] done synthesizing module 'trng_entropy' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/trng/trng_sm3_v3.v:574]
+INFO: [Synth 8-6157] synthesizing module 'trng_health_test_v3' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/trng/trng_health_test_v3.v:51]
+INFO: [Synth 8-6155] done synthesizing module 'trng_health_test_v3' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/trng/trng_health_test_v3.v:51]
+INFO: [Synth 8-6155] done synthesizing module 'trng_monitor' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/trng/trng_monitor.v:83]
+INFO: [Synth 8-6157] synthesizing module 'cmd_ring_buf' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/cmd_ring_buf.v:39]
+	Parameter DEPTH bound to: 256 - type: integer 
+	Parameter PTR_W bound to: 8 - type: integer 
+	Parameter CNT_W bound to: 9 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'cmd_ring_buf' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/cmd_ring_buf.v:39]
+WARNING: [Synth 8-7071] port 'cmd_full' of module 'cmd_ring_buf' is unconnected for instance 'u_cmd_ring_buf' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:323]
+WARNING: [Synth 8-7023] instance 'u_cmd_ring_buf' of module 'cmd_ring_buf' has 20 connections declared, but only 19 given [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:323]
+INFO: [Synth 8-6157] synthesizing module 'desc_ring_buf' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/desc_ring_buf.v:32]
+	Parameter DEPTH bound to: 256 - type: integer 
+	Parameter PTR_W bound to: 8 - type: integer 
+	Parameter CNT_W bound to: 9 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'desc_ring_buf' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/desc_ring_buf.v:32]
+INFO: [Synth 8-6157] synthesizing module 'ring_ctrl' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/ring_ctrl.v:34]
+	Parameter PTR_W bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ring_ctrl' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/ring_ctrl.v:34]
+WARNING: [Synth 8-7071] port 'msix_vec' of module 'ring_ctrl' is unconnected for instance 'u_ring_ctrl' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:376]
+WARNING: [Synth 8-7071] port 'cmd_ring_wr_en' of module 'ring_ctrl' is unconnected for instance 'u_ring_ctrl' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:376]
+WARNING: [Synth 8-7071] port 'cmd_ring_wr_idx' of module 'ring_ctrl' is unconnected for instance 'u_ring_ctrl' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:376]
+WARNING: [Synth 8-7071] port 'cmd_ring_wr_entry' of module 'ring_ctrl' is unconnected for instance 'u_ring_ctrl' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:376]
+WARNING: [Synth 8-7071] port 'cmd_ring_head_wr_en' of module 'ring_ctrl' is unconnected for instance 'u_ring_ctrl' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:376]
+WARNING: [Synth 8-7071] port 'cmd_ring_head_ptr' of module 'ring_ctrl' is unconnected for instance 'u_ring_ctrl' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:376]
+WARNING: [Synth 8-7071] port 'desc_ring_wr_en' of module 'ring_ctrl' is unconnected for instance 'u_ring_ctrl' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:376]
+WARNING: [Synth 8-7071] port 'desc_ring_wr_idx' of module 'ring_ctrl' is unconnected for instance 'u_ring_ctrl' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:376]
+WARNING: [Synth 8-7071] port 'desc_ring_wr_entry' of module 'ring_ctrl' is unconnected for instance 'u_ring_ctrl' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:376]
+WARNING: [Synth 8-7071] port 'desc_ring_head_wr_en' of module 'ring_ctrl' is unconnected for instance 'u_ring_ctrl' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:376]
+WARNING: [Synth 8-7071] port 'desc_ring_head_ptr' of module 'ring_ctrl' is unconnected for instance 'u_ring_ctrl' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:376]
+WARNING: [Synth 8-7071] port 'ctrl_start' of module 'ring_ctrl' is unconnected for instance 'u_ring_ctrl' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:376]
+WARNING: [Synth 8-7071] port 'ctrl_done' of module 'ring_ctrl' is unconnected for instance 'u_ring_ctrl' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:376]
+WARNING: [Synth 8-7071] port 'ctrl_busy' of module 'ring_ctrl' is unconnected for instance 'u_ring_ctrl' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:376]
+WARNING: [Synth 8-7023] instance 'u_ring_ctrl' of module 'ring_ctrl' has 39 connections declared, but only 25 given [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:376]
+INFO: [Synth 8-6157] synthesizing module 'cmd_parser' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/cmd_parser.v:34]
+INFO: [Synth 8-6155] done synthesizing module 'cmd_parser' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/cmd_parser.v:34]
+INFO: [Synth 8-6157] synthesizing module 'crypto_sched_subsys' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/crypto_sched_subsys.v:55]
+	Parameter USE_SM4_MASKED bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'prio_queue' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/prio_queue.v:29]
+	Parameter DEPTH bound to: 8 - type: integer 
+	Parameter IDX_W bound to: 4 - type: integer 
+	Parameter AGING_W bound to: 14 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'prio_queue' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/prio_queue.v:29]
+INFO: [Synth 8-6157] synthesizing module 'arbiter' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/arbiter.v:41]
+	Parameter AGING_W bound to: 14 - type: integer 
+	Parameter AGING_THRESHOLD bound to: 10000 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/arbiter.v:115]
+INFO: [Synth 8-6155] done synthesizing module 'arbiter' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/arbiter.v:41]
+INFO: [Synth 8-6157] synthesizing module 'crypto_coord_subsys' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/crypto_coord_subsys.v:102]
+	Parameter USE_SM4_MASKED bound to: 2 - type: integer 
+	Parameter USE_SM2 bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sm4_engine_masked_v4_indep' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:21]
+INFO: [Synth 8-226] default block is never used [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:238]
+INFO: [Synth 8-226] default block is never used [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:100]
+INFO: [Synth 8-6155] done synthesizing module 'sm4_engine_masked_v4_indep' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:21]
+INFO: [Synth 8-6157] synthesizing module 'sm3_engine' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'sm3_engine' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:31]
+INFO: [Synth 8-6157] synthesizing module 'trng' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/trng/trng_sm3_v3.v:45]
+INFO: [Synth 8-6157] synthesizing module 'trng_health_test' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/trng/trng_sm3_v3.v:619]
+INFO: [Synth 8-6155] done synthesizing module 'trng_health_test' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/trng/trng_sm3_v3.v:619]
+INFO: [Synth 8-6157] synthesizing module 'sm3_drbg' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/trng/trng_sm3_v3.v:238]
+INFO: [Synth 8-6155] done synthesizing module 'sm3_drbg' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/trng/trng_sm3_v3.v:238]
+INFO: [Synth 8-6155] done synthesizing module 'trng' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/trng/trng_sm3_v3.v:45]
+INFO: [Synth 8-226] default block is never used [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/crypto_coord_subsys.v:416]
+INFO: [Synth 8-6155] done synthesizing module 'crypto_coord_subsys' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/crypto_coord_subsys.v:102]
+INFO: [Synth 8-6155] done synthesizing module 'crypto_sched_subsys' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/crypto_sched_subsys.v:55]
+INFO: [Synth 8-6157] synthesizing module 'dma_desc_engine' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/dma_desc_engine.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'dma_desc_engine' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/dma_desc_engine.v:41]
+WARNING: [Synth 8-7071] port 'cq_head_ptr' of module 'dma_desc_engine' is unconnected for instance 'u_dma' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:480]
+WARNING: [Synth 8-7071] port 'cq_tail_ptr' of module 'dma_desc_engine' is unconnected for instance 'u_dma' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:480]
+WARNING: [Synth 8-7071] port 'i_flush' of module 'dma_desc_engine' is unconnected for instance 'u_dma' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:480]
+WARNING: [Synth 8-7023] instance 'u_dma' of module 'dma_desc_engine' has 22 connections declared, but only 19 given [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:480]
+INFO: [Synth 8-6157] synthesizing module 'msix_ctrl' [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/msix_ctrl.v:31]
+	Parameter NVECT bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'msix_ctrl' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/msix_ctrl.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'pcie_front_subsys' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/pcie_front_subsys_v15.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'gm_crypto_board_v15' (0#1) [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/gm_crypto_board_v15.v:69]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_done_r_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/ring_ctrl.v:144]
+WARNING: [Synth 8-6014] Unused sequential element age_m_reg was removed. 
+WARNING: [Synth 8-4767] Trying to implement RAM ' ' in registers. Block RAM or DRAM implementation is not possible; see log for reasons. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/prio_queue.v:168]
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Invalid write to RAM. 
+	3: Invalid write to RAM. 
+	4: Invalid write to RAM. 
+	5: Unable to determine number of words or word size in RAM. 
+	6: No valid clock found for write to RAM. 
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/prio_queue.v:158]
+Reason is one or more of the following :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Invalid write to RAM. 
+	3: Invalid write to RAM. 
+	4: No valid clock found for write to RAM. 
+WARNING: [Synth 8-6014] Unused sequential element s1_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:302]
+WARNING: [Synth 8-6014] Unused sequential element s2_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:303]
+WARNING: [Synth 8-6014] Unused sequential element kk_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:305]
+WARNING: [Synth 8-6014] Unused sequential element mm_base_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:306]
+WARNING: [Synth 8-6014] Unused sequential element nn0_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:312]
+WARNING: [Synth 8-6014] Unused sequential element nn1_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:313]
+WARNING: [Synth 8-6014] Unused sequential element nn2_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:314]
+WARNING: [Synth 8-6014] Unused sequential element nn3_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:315]
+WARNING: [Synth 8-6014] Unused sequential element mtotal_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:319]
+WARNING: [Synth 8-6014] Unused sequential element key_xors1_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:350]
+WARNING: [Synth 8-6014] Unused sequential element key_tau1_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:351]
+WARNING: [Synth 8-6014] Unused sequential element key_Lp1_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:353]
+WARNING: [Synth 8-6014] Unused sequential element key_next1_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:354]
+WARNING: [Synth 8-6014] Unused sequential element key_xors2_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:356]
+WARNING: [Synth 8-6014] Unused sequential element key_tau2_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:357]
+WARNING: [Synth 8-6014] Unused sequential element key_Lp2_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:359]
+WARNING: [Synth 8-6014] Unused sequential element key_next2_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:360]
+WARNING: [Synth 8-6014] Unused sequential element rk_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:380]
+WARNING: [Synth 8-6014] Unused sequential element t_in_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:381]
+WARNING: [Synth 8-6014] Unused sequential element comp_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:382]
+WARNING: [Synth 8-6014] Unused sequential element addr_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:383]
+WARNING: [Synth 8-6014] Unused sequential element tau_m_raw_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:385]
+WARNING: [Synth 8-6014] Unused sequential element tau_m_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:387]
+WARNING: [Synth 8-6014] Unused sequential element L_m_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:388]
+WARNING: [Synth 8-6014] Unused sequential element new_word_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:390]
+WARNING: [Synth 8-7137] Register do_decrypt_reg in module sm4_engine_masked_v4_indep has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:293]
+WARNING: [Synth 8-7137] Register round_keys_reg in module sm4_engine_masked_v4_indep has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-7137] Register data_out_reg in module sm4_engine_masked_v4_indep has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:262]
+WARNING: [Synth 8-4767] Trying to implement RAM 'round_keys_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm4/sm4_engine_masked_v4_indep.v:380]
+Reason is one or more of the following :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Invalid write to RAM. 
+	3: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+WARNING: [Synth 8-7137] Register W_mem_reg[0] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[1] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[2] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[3] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[4] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[5] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[6] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[7] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[8] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[9] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[10] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[11] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[12] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[13] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[14] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[15] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[16] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[17] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[18] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[19] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[20] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[21] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[22] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[23] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[24] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[25] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[26] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[27] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[28] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[29] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[30] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[31] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[32] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[33] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[34] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[35] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[36] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[37] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[38] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[39] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[40] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[41] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[42] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[43] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[44] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[45] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[46] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[47] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[48] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[49] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[50] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[51] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[52] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[53] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[54] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[55] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[56] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[57] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[58] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[59] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[60] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[61] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[62] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[63] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[64] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[65] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[66] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-7137] Register W_mem_reg[67] in module sm3_engine has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/sm3/sm3_engine.v:132]
+WARNING: [Synth 8-6014] Unused sequential element window_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/trng/trng_sm3_v3.v:642]
+WARNING: [Synth 8-6014] Unused sequential element zeros_count_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/trng/trng_sm3_v3.v:646]
+WARNING: [Synth 8-6014] Unused sequential element ht_pass_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/trng/trng_sm3_v3.v:148]
+WARNING: [Synth 8-6014] Unused sequential element lc_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/crypto_coord_subsys.v:404]
+WARNING: [Synth 8-6014] Unused sequential element t_hi_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/crypto_coord_subsys.v:410]
+WARNING: [Synth 8-7137] Register mask_seed_r_reg in module crypto_coord_subsys has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/crypto_coord_subsys.v:320]
+WARNING: [Synth 8-6014] Unused sequential element ram_prio_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element host_addr_r_reg was removed.  [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/rtl/subsys/dma_desc_engine.v:142]
+WARNING: [Synth 8-6014] Unused sequential element cq_desc_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element cq_rid_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element cq_err_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element cq_ok_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element cq_data_reg was removed. 
+WARNING: [Synth 8-7129] Port req in module sm3_drbg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_rdy in module trng is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[255] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[254] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[253] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[252] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[251] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[250] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[249] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[248] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[247] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[246] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[245] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[244] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[243] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[242] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[241] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[240] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[239] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[238] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[237] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[236] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[235] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[234] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[233] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[232] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[231] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[230] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[229] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[228] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[227] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[226] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[225] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[224] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[223] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[222] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[221] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[220] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[219] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[218] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[217] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[216] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[215] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[214] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[213] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[212] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[211] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[210] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[209] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[208] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[207] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[206] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[205] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[204] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[203] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[202] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[201] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[200] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[199] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[198] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[197] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[196] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[195] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[194] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[193] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[192] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[191] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[190] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[189] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[188] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[187] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[186] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[185] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[184] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[183] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[182] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[181] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[180] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[179] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[178] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[177] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[176] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[175] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[174] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[173] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[172] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[171] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[170] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[169] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[168] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[167] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[166] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[165] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[164] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[163] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[162] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[161] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[160] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[159] in module crypto_coord_subsys is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ic[158] in module crypto_coord_subsys is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2262.457 ; gain = 1265.586
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2262.457 ; gain = 1265.586
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2262.457 ; gain = 1265.586
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.558 . Memory (MB): peak = 2262.457 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15.xdc]
+WARNING: [Vivado 12-507] No nets matched 'clk_IBUF'. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15.xdc:72]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15.xdc:72]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Constraints 18-402] set_false_path: 'prev_rst_n_reg/Q' is not a valid startpoint. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15.xdc:122]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'rst_n_reg/Q' is not a valid startpoint. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15.xdc:122]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'u_dut/soft_rst_n_reg/Q' is not a valid startpoint. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15.xdc:122]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+CRITICAL WARNING: [Constraints 18-513] set_false_path: list of objects specified for '-from' option contains no valid startpoints. Please check to make sure at least one valid startpoint is specified. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15.xdc:122]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-from [get_pins -hierarchical -quiet *jtag_*]'. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15.xdc:125]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-from [get_pins -hierarchical -quiet *dp_if_*]'. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15.xdc:126]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+Finished Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/gm_crypto_board_v15_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/gm_crypto_board_v15_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15_min.xdc]
+WARNING: [Constraints 18-619] A clock with name 'clk' already exists, overwriting the previous clock with the same name. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15_min.xdc:13]
+Finished Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15_min.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15_min.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/gm_crypto_board_v15_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/gm_crypto_board_v15_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/clk_l400.xdc]
+WARNING: [Constraints 18-619] A clock with name 'clk' already exists, overwriting the previous clock with the same name. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/clk_l400.xdc:20]
+CRITICAL WARNING: [Designutils 20-1307] Command 'set_clock_waveform' is not supported in the xdc constraint file. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/clk_l400.xdc:23]
+CRITICAL WARNING: [Designutils 20-1307] Command 'set_clock_jitter' is not supported in the xdc constraint file. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/clk_l400.xdc:27]
+CRITICAL WARNING: [Designutils 20-1307] Command 'set_output_jitter' is not supported in the xdc constraint file. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/clk_l400.xdc:38]
+WARNING: [Vivado 12-584] No ports matched 'rst_n'. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/clk_l400.xdc:42]
+CRITICAL WARNING: [Vivado 12-4739] set_max_delay:No valid object(s) found for '-from [get_ports rst_n]'. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/clk_l400.xdc:42]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Common 17-142] Invalid property name 'clock_group'.  Please use the 'list_property' command to find properties supported by the target 'clock' object. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/clk_l400.xdc:45]
+Finished Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/clk_l400.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/clk_l400.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/gm_crypto_board_v15_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/gm_crypto_board_v15_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc]
+WARNING: [Vivado 12-584] No ports matched 'rst_n'. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc:19]
+CRITICAL WARNING: [Common 17-158] 'name' can only be specified once. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc:19]
+CRITICAL WARNING: [Constraints 18-1055] Clock 'rst_release_path' completely overrides clock 'clk', which is referenced by one or more other constraints. Any constraints that refer to the overridden clock will be ignored.
+New: create_generated_clock -name rst_release_path -source [get_ports clk] -divide_by 1 [get_ports clk], [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc:23]
+Previous: create_clock -period 2.500 [get_ports clk], [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/clk_l400.xdc:20]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Designutils 20-1307] Command 'set_min_pulse_width' is not supported in the xdc constraint file. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc:29]
+WARNING: [Vivado 12-584] No ports matched 'rst_n'. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc:33]
+WARNING: [Vivado 12-627] No clocks matched 'clk'. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc:33]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc:33]
+CRITICAL WARNING: [Vivado 12-4739] set_max_delay:No valid object(s) found for '-from [get_ports rst_n]'. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc:33]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+Finished Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc]
+Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/tdc.xdc]
+Finished Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/tdc.xdc]
+Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/io_placeholder.xdc]
+Finished Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/io_placeholder.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 2391.020 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.482 . Memory (MB): peak = 2391.113 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 2391.113 ; gain = 1394.242
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a200tsbg484-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 2391.113 ; gain = 1394.242
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 2391.113 ; gain = 1394.242
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'ring_ctrl'
+INFO: [Synth 8-802] inferred FSM for state register 'fsm_state_reg' in module 'sm4_engine_masked_v4_indep'
+INFO: [Synth 8-802] inferred FSM for state register 'fsm_state_reg' in module 'sm3_engine'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'sm3_drbg'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'trng'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'crypto_coord_subsys'
+INFO: [Synth 8-802] inferred FSM for state register 'st_r_reg' in module 'dma_desc_engine'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                                0 |                               00
+               S_DMA_RUN |                                1 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'ring_ctrl'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                               00 |                            00000
+                   S_KEY |                               01 |                            00001
+                  S_DATA |                               10 |                            00010
+                S_OUTPUT |                               11 |                            00011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'fsm_state_reg' using encoding 'sequential' in module 'sm4_engine_masked_v4_indep'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                           000001 |                              000
+                S_EXPAND |                           000010 |                              001
+               S_COMP_P1 |                           000100 |                              010
+               S_COMP_P2 |                           001000 |                              011
+               S_COMP_P3 |                           010000 |                              100
+                S_OUTPUT |                           100000 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'fsm_state_reg' using encoding 'one-hot' in module 'sm3_engine'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                                0 |                               00
+                  S_HASH |                                1 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'sm3_drbg'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                             0101 |                             0000
+               S_REQUEST |                             0110 |                             0001
+                S_SAMPLE |                             0100 |                             0010
+                    S_HT |                             0000 |                             0011
+                 S_ERROR |                             0001 |                             1000
+               S_PROCESS |                             0010 |                             0100
+             S_HASH_WAIT |                             0011 |                             0101
+                S_OUTPUT |                             1000 |                             0110
+                  S_DONE |                             0111 |                             0111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'trng'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                         00000010 |                              000
+                  S_SREQ |                         01000000 |                              011
+                 S_SWAIT |                         00001000 |                              100
+                 S_TDONE |                         00100000 |                              111
+                   S_RUN |                         00010000 |                              001
+                  S_WAIT |                         10000000 |                              010
+                   S_OUT |                         00000100 |                              101
+                   S_ERR |                         00000001 |                              110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'crypto_coord_subsys'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                              001 |                               00
+                  S_PACK |                              010 |                               01
+                   S_DMA |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'st_r_reg' using encoding 'one-hot' in module 'dma_desc_engine'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:58 ; elapsed = 00:01:03 . Memory (MB): peak = 2391.113 ; gain = 1394.242
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   32 Bit       Adders := 2     
+	   4 Input   32 Bit       Adders := 4     
+	   2 Input   21 Bit       Adders := 1     
+	   2 Input   17 Bit       Adders := 1     
+	   2 Input   13 Bit       Adders := 1     
+	   2 Input   12 Bit       Adders := 2     
+	   2 Input   11 Bit       Adders := 9     
+	   2 Input   10 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 7     
+	   3 Input    9 Bit       Adders := 4     
+	   2 Input    8 Bit       Adders := 9     
+	   2 Input    7 Bit       Adders := 5     
+	   2 Input    6 Bit       Adders := 6     
+	   2 Input    5 Bit       Adders := 9     
+	   2 Input    4 Bit       Adders := 21    
+	   2 Input    3 Bit       Adders := 2     
+	   2 Input    2 Bit       Adders := 4     
++---XORs : 
+	   2 Input    256 Bit         XORs := 2     
+	   2 Input     64 Bit         XORs := 6     
+	   3 Input     32 Bit         XORs := 10    
+	   5 Input     32 Bit         XORs := 4     
+	   2 Input     32 Bit         XORs := 23    
+	   4 Input     32 Bit         XORs := 2     
+	   6 Input     32 Bit         XORs := 1     
+	   2 Input      8 Bit         XORs := 36    
+	   3 Input      1 Bit         XORs := 4     
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	              512 Bit    Registers := 3     
+	              256 Bit    Registers := 7     
+	              128 Bit    Registers := 265   
+	               64 Bit    Registers := 3     
+	               32 Bit    Registers := 304   
+	               16 Bit    Registers := 2     
+	               12 Bit    Registers := 1     
+	               11 Bit    Registers := 7     
+	               10 Bit    Registers := 16    
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 282   
+	                7 Bit    Registers := 6     
+	                6 Bit    Registers := 35    
+	                4 Bit    Registers := 93    
+	                3 Bit    Registers := 5     
+	                2 Bit    Registers := 5     
+	                1 Bit    Registers := 95    
++---RAMs : 
+	               2K Bit	(8 X 256 bit)          RAMs := 2     
+	              128 Bit	(16 X 8 bit)          RAMs := 1     
+	               64 Bit	(16 X 4 bit)          RAMs := 1     
+	               64 Bit	(8 X 8 bit)          RAMs := 2     
+	               48 Bit	(16 X 3 bit)          RAMs := 1     
+	                8 Bit	(8 X 1 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input  512 Bit        Muxes := 1     
+	   6 Input  256 Bit        Muxes := 2     
+	   2 Input  256 Bit        Muxes := 13    
+	   4 Input  256 Bit        Muxes := 1     
+	   8 Input  256 Bit        Muxes := 1     
+	   9 Input  128 Bit        Muxes := 1     
+	   2 Input  128 Bit        Muxes := 3     
+	   4 Input  128 Bit        Muxes := 2     
+	   2 Input   64 Bit        Muxes := 3     
+	   2 Input   32 Bit        Muxes := 151   
+	   6 Input   32 Bit        Muxes := 32    
+	   4 Input   32 Bit        Muxes := 4     
+	   9 Input   32 Bit        Muxes := 1     
+	   2 Input   31 Bit        Muxes := 2     
+	   2 Input   30 Bit        Muxes := 1     
+	   2 Input   20 Bit        Muxes := 1     
+	   2 Input   18 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 1     
+	   2 Input   13 Bit        Muxes := 2     
+	   2 Input   12 Bit        Muxes := 3     
+	   8 Input   12 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 19    
+	   2 Input    9 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 19    
+	   8 Input    8 Bit        Muxes := 2     
+	   6 Input    7 Bit        Muxes := 4     
+	   9 Input    7 Bit        Muxes := 1     
+	   6 Input    6 Bit        Muxes := 4     
+	   2 Input    6 Bit        Muxes := 3     
+	   4 Input    6 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 1     
+	   4 Input    5 Bit        Muxes := 1     
+	   9 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 8     
+	   4 Input    4 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 3     
+	   3 Input    3 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 11    
+	   5 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 344   
+	   6 Input    1 Bit        Muxes := 150   
+	   9 Input    1 Bit        Muxes := 4     
+	   3 Input    1 Bit        Muxes := 35    
+	   4 Input    1 Bit        Muxes := 266   
+	   8 Input    1 Bit        Muxes := 13    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 740 (col length:100)
+BRAMs: 730 (col length: RAMB18 100 RAMB36 50)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[0]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[1]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[2]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[3]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[4]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[5]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[6]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[7]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[8]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[9]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[10]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[11]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[12]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[13]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[14]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[15]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[16]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[17]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[18]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[19]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[20]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[21]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[22]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[23]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[24]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[25]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[26]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[27]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[28]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[29]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[30]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[31]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[32]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[33]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[34]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[35]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[36]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[37]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[38]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[39]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[40]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[41]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[42]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[43]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[44]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[45]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[46]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[47]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[48]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[49]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[50]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[51]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[52]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[53]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[54]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[55]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[56]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[57]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[58]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[59]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[60]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[61]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[62]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[63]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[64]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[65]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[66]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[67]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[68]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[69]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[70]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[71]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[72]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[73]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[74]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[75]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[76]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[77]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[78]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[79]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[80]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[81]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[82]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[83]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[84]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[85]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[86]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[87]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[88]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[89]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[90]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[91]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[92]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[93]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[94]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[95]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[96]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[97]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[98]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Synth 8-3886] merging instance 'rb_b_reg[99]' (FDCE) to 'rb_b_reg[255]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\rb_b_reg[255] )
+INFO: [Synth 8-5546] ROM "ctrl_global_en" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ctrl_trng_start_r" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ctrl_sm2_start_r" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ctrl_sm3_start_r" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ctrl_sm4_start_r" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cmd_ring_head_ptr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "desc_ring_head_ptr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ctrl_global_en" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ctrl_trng_start_r" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ctrl_sm2_start_r" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ctrl_sm3_start_r" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ctrl_sm4_start_r" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "scratch_reg" won't be mapped to RAM because it is too sparse
+INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-12589] Found 16 bits of RAM  (i_7) with no load. RAM width may be reduced from 128 to 112 
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "pcie_front_subsys__GC0/u_cmd_ring_buf/mem_entry_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "pcie_front_subsys__GC0/u_cmd_ring_buf/mem_entry_reg",trying to implement using LUTRAM
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_msix/\vec_addr_reg[1][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_bar_ctrl/ctrl_start_reg)
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_msix/\vec_mask_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_msix/\vec_pend_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_msix/\irq_vec_out_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_dma/dma_wr_desc_reg[63] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_msix/\irq_data_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_msix/\irq_addr_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_msix/\irq_addr_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_msix/irq_vld_reg)
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (soft_rst_n_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_bar_ctrl/\err_log_reg[7][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_bar_ctrl/\err_log_reg[6][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_bar_ctrl/\err_log_reg[3][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_bar_ctrl/\err_log_reg[2][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_bar_ctrl/\err_log_reg[5][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_bar_ctrl/\err_log_reg[4][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_bar_ctrl/\err_log_reg[1][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_bar_ctrl/\err_log_reg[0][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_bar_ctrl/\err_log_reg[13][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_bar_ctrl/\err_log_reg[12][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_bar_ctrl/\err_log_reg[9][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_bar_ctrl/\err_log_reg[8][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_bar_ctrl/\err_log_reg[15][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_bar_ctrl/\err_log_reg[14][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_bar_ctrl/\err_log_reg[11][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_bar_ctrl/\err_log_reg[10][31] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:35 ; elapsed = 00:01:55 . Memory (MB): peak = 2494.473 ; gain = 1497.602
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++---------------------------+-------------+---------------+----------------+
+|Module Name                | RTL Object  | Depth x Width | Implemented As | 
++---------------------------+-------------+---------------+----------------+
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | get_ck      | 32x23         | LUT            | 
+|sm4_engine_masked_v4_indep | get_ck      | 32x23         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
+|sm4_engine_masked_v4_indep | sm4_sbox255 | 256x8         | LUT            | 
++---------------------------+-------------+---------------+----------------+
+
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++-------------------------+------------------------------+----------------+----------------------+-----------------+
+|Module Name              | RTL Object                   | Inference      | Size (Depth x Width) | Primitives      | 
++-------------------------+------------------------------+----------------+----------------------+-----------------+
+|crypto_sched_subsys__GC0 | ram_retry_reg                | Implied        | 16 x 3               | RAM32M x 2      | 
+|crypto_sched_subsys__GC0 | ram_op_reg                   | Implied        | 16 x 4               | RAM32M x 1      | 
+|crypto_sched_subsys__GC0 | ram_rid_reg                  | Implied        | 16 x 8               | RAM32M x 2      | 
+|crypto_sched_subsys__GC0 | fifo_rid_reg                 | Implied        | 8 x 8                | RAM16X1D x 8    | 
+|crypto_sched_subsys__GC0 | fifo_err_reg                 | Implied        | 8 x 8                | RAM32M x 2      | 
+|crypto_sched_subsys__GC0 | fifo_ok_reg                  | Implied        | 8 x 1                | RAM16X1D x 1    | 
+|crypto_sched_subsys__GC0 | fifo_ra_reg                  | Implied        | 8 x 256              | RAM16X1D x 256  | 
+|crypto_sched_subsys__GC0 | fifo_rb_reg                  | Implied        | 8 x 256              | RAM16X1D x 256  | 
+|crypto_sched_subsys__GC0 | ram_ia_reg                   | User Attribute | 16 x 512             | RAM32M x 86     | 
+|crypto_sched_subsys__GC0 | ram_ib_reg                   | User Attribute | 16 x 512             | RAM32M x 86     | 
+|crypto_sched_subsys__GC0 | ram_ic_reg                   | User Attribute | 16 x 256             | RAM32M x 86     | 
+|pcie_front_subsys__GC0   | u_cmd_ring_buf/mem_entry_reg | Implied        | 256 x 112            | RAM64M x 152    | 
++-------------------------+------------------------------+----------------+----------------------+-----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-565] redefining clock 'clk'
+WARNING: [Synth 8-565] redefining clock 'clk'
+rst_release_path is its own master at line 23 of file C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:42 ; elapsed = 00:02:04 . Memory (MB): peak = 2648.828 ; gain = 1651.957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s0_reg0_inferred /I223
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s8_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s8_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s8_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s8_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s8_reg0_inferred /s8_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s8_reg0_inferred /I224
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s7_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s7_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s7_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s7_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s7_reg0_inferred /s7_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s7_reg0_inferred /I225
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s6_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s6_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s6_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s6_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s6_reg0_inferred /s6_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s6_reg0_inferred /I226
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s5_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s5_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s5_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s5_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s5_reg0_inferred /s5_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s5_reg0_inferred /I227
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s4_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s4_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s4_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s4_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s4_reg0_inferred /s4_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s4_reg0_inferred /I228
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s3_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s3_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s3_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s3_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s3_reg0_inferred /s3_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s3_reg0_inferred /I229
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s2_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s2_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s2_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s2_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s2_reg0_inferred /s2_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s2_reg0_inferred /\u_trng_monitor/u_entropy/u_ro2/p_0_in 
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s1_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s1_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s1_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s1_inferred /in0
+      : u_dut/i_0/i_4/O159
+      : u_dut/i_0/i_4/\u_trng_monitor/u_entropy/ro2_q 
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s0_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s0_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s0_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s0_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s0_reg0_inferred /s0_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s0_reg0_inferred /I230
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s6_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s6_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s6_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s6_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s6_reg0_inferred /s6_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s6_reg0_inferred /I231
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s5_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s5_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s5_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s5_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s5_reg0_inferred /s5_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s5_reg0_inferred /I232
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s4_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s4_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s4_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s4_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s4_reg0_inferred /s4_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s4_reg0_inferred /I233
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s3_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s3_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s3_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s3_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s3_reg0_inferred /s3_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s3_reg0_inferred /I234
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s2_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s2_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s2_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s2_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s2_reg0_inferred /s2_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s2_reg0_inferred /\u_trng_monitor/u_entropy/u_ro3/p_0_in 
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s1_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s1_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s1_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s1_inferred /in0
+      : u_dut/i_0/i_4/O160
+      : u_dut/i_0/i_4/\u_trng_monitor/u_entropy/ro3_q 
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s0_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s0_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s0_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s0_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s0_reg0_inferred /s0_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s0_reg0_inferred /I214
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s10_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s10_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s10_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s10_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s10_reg0_inferred /s10_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s10_reg0_inferred /I215
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s9_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s9_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s9_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s9_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s9_reg0_inferred /s9_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s9_reg0_inferred /I216
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s8_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s8_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s8_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s8_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s8_reg0_inferred /s8_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s8_reg0_inferred /I217
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s7_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s7_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s7_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s7_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s7_reg0_inferred /s7_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s7_reg0_inferred /I218
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s6_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s6_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s6_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s6_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s6_reg0_inferred /s6_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s6_reg0_inferred /I219
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s5_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s5_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s5_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s5_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s5_reg0_inferred /s5_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s5_reg0_inferred /I220
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s4_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s4_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s4_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s4_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s4_reg0_inferred /s4_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s4_reg0_inferred /I221
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s3_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s3_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s3_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s3_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s3_reg0_inferred /s3_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s3_reg0_inferred /I222
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s2_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s2_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s2_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s2_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s2_reg0_inferred /s2_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s2_reg0_inferred /\u_trng_monitor/u_entropy/u_ro1/p_0_in 
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s1_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s1_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s1_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s1_inferred /in0
+      : u_dut/i_0/i_4/O158
+      : u_dut/i_0/i_4/\u_trng_monitor/u_entropy/ro1_q 
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s0_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s0_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s0_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s0_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s0_reg0_inferred /s0_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s0_reg0_inferred /I184
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s8_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s8_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s8_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s8_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s8_reg0_inferred /s8_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s8_reg0_inferred /I185
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s7_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s7_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s7_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s7_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s7_reg0_inferred /s7_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s7_reg0_inferred /I186
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s6_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s6_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s6_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s6_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s6_reg0_inferred /s6_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s6_reg0_inferred /I187
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s5_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s5_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s5_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s5_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s5_reg0_inferred /s5_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s5_reg0_inferred /I188
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s4_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s4_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s4_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s4_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s4_reg0_inferred /s4_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s4_reg0_inferred /I189
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s3_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s3_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s3_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s3_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s3_reg0_inferred /s3_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s3_reg0_inferred /I190
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s2_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s2_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s2_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s2_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s2_reg0_inferred /s2_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s2_reg0_inferred /\u_entropy/u_ro2/p_0_in 
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s1_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s1_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s1_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s1_inferred /in0
+      : u_dut/u_trngi_6/i_3/O318
+      : u_dut/u_trngi_6/i_3/\u_entropy/ro2_q 
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s0_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s0_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s0_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s0_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro2/s0_reg0_inferred /s0_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s0_reg0_inferred /I191
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s6_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s6_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s6_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s6_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s6_reg0_inferred /s6_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s6_reg0_inferred /I192
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s5_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s5_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s5_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s5_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s5_reg0_inferred /s5_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s5_reg0_inferred /I193
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s4_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s4_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s4_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s4_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s4_reg0_inferred /s4_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s4_reg0_inferred /I194
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s3_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s3_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s3_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s3_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s3_reg0_inferred /s3_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s3_reg0_inferred /I195
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s2_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s2_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s2_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s2_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s2_reg0_inferred /s2_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s2_reg0_inferred /\u_entropy/u_ro3/p_0_in 
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s1_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s1_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s1_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s1_inferred /in0
+      : u_dut/u_trngi_6/i_3/O319
+      : u_dut/u_trngi_6/i_3/\u_entropy/ro3_q 
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s0_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s0_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s0_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s0_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro3/s0_reg0_inferred /s0_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s0_reg0_inferred /I175
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s10_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s10_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s10_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s10_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s10_reg0_inferred /s10_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s10_reg0_inferred /I176
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s9_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s9_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s9_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s9_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s9_reg0_inferred /s9_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s9_reg0_inferred /I177
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s8_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s8_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s8_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s8_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s8_reg0_inferred /s8_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s8_reg0_inferred /I178
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s7_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s7_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s7_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s7_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s7_reg0_inferred /s7_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s7_reg0_inferred /I179
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s6_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s6_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s6_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s6_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s6_reg0_inferred /s6_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s6_reg0_inferred /I180
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s5_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s5_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s5_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s5_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s5_reg0_inferred /s5_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s5_reg0_inferred /I181
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s4_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s4_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s4_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s4_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s4_reg0_inferred /s4_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s4_reg0_inferred /I182
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s3_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s3_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s3_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s3_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s3_reg0_inferred /s3_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s3_reg0_inferred /I183
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s2_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s2_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s2_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s2_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s2_reg0_inferred /s2_reg0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s2_reg0_inferred /\u_entropy/u_ro1/p_0_in 
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s1_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s1_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s1_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s1_inferred /in0
+      : u_dut/u_trngi_6/i_3/O317
+      : u_dut/u_trngi_6/i_3/\u_entropy/ro1_q 
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s0_inferred__0 /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s0_inferred__0 /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s0_inferred /out
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s0_inferred /in0
+      : u_dut/u_trngi_6/\u_entropy/u_ro1/s0_reg0_inferred /s0_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s0_reg0_inferred /I223
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s8_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s8_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s8_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s8_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s8_reg0_inferred /s8_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s8_reg0_inferred /I224
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s7_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s7_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s7_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s7_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s7_reg0_inferred /s7_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s7_reg0_inferred /I225
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s6_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s6_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s6_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s6_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s6_reg0_inferred /s6_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s6_reg0_inferred /I226
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s5_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s5_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s5_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s5_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s5_reg0_inferred /s5_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s5_reg0_inferred /I227
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s4_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s4_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s4_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s4_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s4_reg0_inferred /s4_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s4_reg0_inferred /I228
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s3_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s3_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s3_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s3_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s3_reg0_inferred /s3_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s3_reg0_inferred /I229
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s2_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s2_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s2_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s2_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s2_reg0_inferred /s2_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s2_reg0_inferred /\u_trng_monitor/u_entropy/u_ro2/p_0_in 
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s1_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s1_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s1_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s1_inferred /in0
+      : u_dut/i_0/i_19/O159
+      : u_dut/i_0/i_19/\u_trng_monitor/u_entropy/ro2_q 
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s0_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s0_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s0_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s0_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s0_reg0_inferred /s0_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s0_reg0_inferred /I230
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s6_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s6_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s6_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s6_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s6_reg0_inferred /s6_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s6_reg0_inferred /I231
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s5_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s5_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s5_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s5_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s5_reg0_inferred /s5_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s5_reg0_inferred /I232
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s4_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s4_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s4_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s4_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s4_reg0_inferred /s4_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s4_reg0_inferred /I233
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s3_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s3_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s3_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s3_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s3_reg0_inferred /s3_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s3_reg0_inferred /I234
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s2_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s2_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s2_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s2_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s2_reg0_inferred /s2_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s2_reg0_inferred /\u_trng_monitor/u_entropy/u_ro3/p_0_in 
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s1_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s1_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s1_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s1_inferred /in0
+      : u_dut/i_0/i_19/O160
+      : u_dut/i_0/i_19/\u_trng_monitor/u_entropy/ro3_q 
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s0_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s0_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s0_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s0_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s0_reg0_inferred /s0_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s0_reg0_inferred /I214
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s10_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s10_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s10_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s10_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s10_reg0_inferred /s10_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s10_reg0_inferred /I215
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s9_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s9_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s9_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s9_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s9_reg0_inferred /s9_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s9_reg0_inferred /I216
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s8_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s8_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s8_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s8_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s8_reg0_inferred /s8_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s8_reg0_inferred /I217
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s7_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s7_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s7_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s7_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s7_reg0_inferred /s7_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s7_reg0_inferred /I218
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s6_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s6_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s6_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s6_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s6_reg0_inferred /s6_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s6_reg0_inferred /I219
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s5_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s5_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s5_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s5_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s5_reg0_inferred /s5_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s5_reg0_inferred /I220
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s4_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s4_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s4_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s4_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s4_reg0_inferred /s4_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s4_reg0_inferred /I221
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s3_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s3_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s3_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s3_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s3_reg0_inferred /s3_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s3_reg0_inferred /I222
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s2_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s2_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s2_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s2_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s2_reg0_inferred /s2_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s2_reg0_inferred /\u_trng_monitor/u_entropy/u_ro1/p_0_in 
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s1_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s1_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s1_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s1_inferred /in0
+      : u_dut/i_0/i_19/O158
+      : u_dut/i_0/i_19/\u_trng_monitor/u_entropy/ro1_q 
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s0_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s0_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s0_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s0_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s0_reg0_inferred /s0_reg0
+info: optimization accepted worst group hill climbing move (-3618.0/oG. 870.0ps)
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:59 ; elapsed = 00:02:22 . Memory (MB): peak = 2758.273 ; gain = 1761.402
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++-------------------------+------------------------------+----------------+----------------------+-----------------+
+|Module Name              | RTL Object                   | Inference      | Size (Depth x Width) | Primitives      | 
++-------------------------+------------------------------+----------------+----------------------+-----------------+
+|crypto_sched_subsys__GC0 | ram_retry_reg                | Implied        | 16 x 3               | RAM32M x 2      | 
+|crypto_sched_subsys__GC0 | fifo_rid_reg                 | Implied        | 8 x 8                | RAM16X1D x 8    | 
+|pcie_front_subsys__GC0   | u_cmd_ring_buf/mem_entry_reg | Implied        | 256 x 112            | RAM64M x 152    | 
+|crypto_sched_subsys__GC0 | ram_op_reg                   | Implied        | 16 x 4               | RAM32M x 1      | 
+|crypto_sched_subsys__GC0 | ram_rid_reg                  | Implied        | 16 x 8               | RAM32M x 2      | 
+|crypto_sched_subsys__GC0 | fifo_err_reg                 | Implied        | 8 x 8                | RAM32M x 2      | 
+|crypto_sched_subsys__GC0 | fifo_ok_reg                  | Implied        | 8 x 1                | RAM16X1D x 1    | 
+|crypto_sched_subsys__GC0 | fifo_ra_reg                  | Implied        | 8 x 256              | RAM16X1D x 256  | 
+|crypto_sched_subsys__GC0 | fifo_rb_reg                  | Implied        | 8 x 256              | RAM16X1D x 256  | 
+|crypto_sched_subsys__GC0 | ram_ia_reg                   | User Attribute | 16 x 512             | RAM32M x 86     | 
+|crypto_sched_subsys__GC0 | ram_ib_reg                   | User Attribute | 16 x 512             | RAM32M x 86     | 
++-------------------------+------------------------------+----------------+----------------------+-----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-565] redefining clock 'clk'
+WARNING: [Synth 8-565] redefining clock 'clk'
+rst_release_path is its own master at line 23 of file C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc
+WARNING: [Synth 8-565] redefining clock 'clk'
+WARNING: [Synth 8-565] redefining clock 'clk'
+rst_release_path is its own master at line 23 of file C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s0_reg0_inferred /I223
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s8_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s8_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s8_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s8_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s8_reg0_inferred /s8_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s8_reg0_inferred /I224
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s7_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s7_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s7_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s7_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s7_reg0_inferred /s7_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s7_reg0_inferred /I225
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s6_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s6_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s6_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s6_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s6_reg0_inferred /s6_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s6_reg0_inferred /I226
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s5_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s5_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s5_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s5_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s5_reg0_inferred /s5_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s5_reg0_inferred /I227
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s4_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s4_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s4_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s4_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s4_reg0_inferred /s4_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s4_reg0_inferred /I228
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s3_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s3_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s3_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s3_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s3_reg0_inferred /s3_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s3_reg0_inferred /I229
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s2_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s2_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s2_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s2_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s2_reg0_inferred /s2_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s2_reg0_inferred /\u_trng_monitor/u_entropy/u_ro2/p_0_in 
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s1_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s1_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s1_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s1_inferred /in0
+      : u_dut/i_0/i_19/O159
+      : u_dut/i_0/i_19/\u_trng_monitor/u_entropy/ro2_q 
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s0_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s0_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s0_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s0_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s0_reg0_inferred /s0_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s0_reg0_inferred /I230
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s6_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s6_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s6_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s6_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s6_reg0_inferred /s6_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s6_reg0_inferred /I231
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s5_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s5_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s5_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s5_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s5_reg0_inferred /s5_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s5_reg0_inferred /I232
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s4_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s4_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s4_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s4_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s4_reg0_inferred /s4_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s4_reg0_inferred /I233
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s3_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s3_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s3_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s3_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s3_reg0_inferred /s3_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s3_reg0_inferred /I234
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s2_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s2_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s2_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s2_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s2_reg0_inferred /s2_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s2_reg0_inferred /\u_trng_monitor/u_entropy/u_ro3/p_0_in 
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s1_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s1_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s1_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s1_inferred /in0
+      : u_dut/i_0/i_19/O160
+      : u_dut/i_0/i_19/\u_trng_monitor/u_entropy/ro3_q 
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s0_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s0_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s0_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s0_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s0_reg0_inferred /s0_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s0_reg0_inferred /I214
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s10_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s10_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s10_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s10_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s10_reg0_inferred /s10_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s10_reg0_inferred /I215
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s9_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s9_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s9_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s9_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s9_reg0_inferred /s9_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s9_reg0_inferred /I216
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s8_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s8_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s8_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s8_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s8_reg0_inferred /s8_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s8_reg0_inferred /I217
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s7_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s7_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s7_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s7_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s7_reg0_inferred /s7_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s7_reg0_inferred /I218
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s6_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s6_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s6_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s6_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s6_reg0_inferred /s6_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s6_reg0_inferred /I219
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s5_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s5_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s5_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s5_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s5_reg0_inferred /s5_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s5_reg0_inferred /I220
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s4_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s4_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s4_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s4_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s4_reg0_inferred /s4_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s4_reg0_inferred /I221
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s3_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s3_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s3_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s3_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s3_reg0_inferred /s3_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s3_reg0_inferred /I222
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s2_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s2_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s2_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s2_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s2_reg0_inferred /s2_reg0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s2_reg0_inferred /\u_trng_monitor/u_entropy/u_ro1/p_0_in 
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s1_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s1_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s1_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s1_inferred /in0
+      : u_dut/i_0/i_19/O158
+      : u_dut/i_0/i_19/\u_trng_monitor/u_entropy/ro1_q 
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s0_inferred__0 /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s0_inferred__0 /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s0_inferred /out
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s0_inferred /in0
+      : u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s0_reg0_inferred /s0_reg0
+INFO: [Synth 8-7067] Removed DRAM instance u_dut/i_0/u_sched/ram_ia_reg_0_15_510_511 from module pcie_front_subsys_GT0_tempName due to constant propagation
+INFO: [Synth 8-7067] Removed DRAM instance u_dut/i_0/u_sched/ram_ib_reg_0_15_252_257 from module pcie_front_subsys_GT0_tempName due to constant propagation
+INFO: [Synth 8-7067] Removed DRAM instance u_dut/i_0/u_sched/fifo_err_reg_0_7_6_7 from module pcie_front_subsys_GT0_tempName due to constant propagation
+INFO: [Synth 8-620] skipping inversion-propagation across instance 'u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s0_reg0 ' with timing assertions on output pin 'O'
+INFO: [Synth 8-620] skipping inversion-propagation across instance 'u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s0_reg0 ' with timing assertions on output pin 'O'
+INFO: [Synth 8-620] skipping inversion-propagation across instance 'u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s0_reg0 ' with timing assertions on output pin 'O'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_dut/i_0/\u_dma/cap_err_reg[7] )
+INFO: [Synth 8-7067] Removed DRAM instance u_dut/i_0/u_sched/ram_ia_reg_0_15_510_511 from module pcie_front_subsys_GT0_tempName due to constant propagation
+INFO: [Synth 8-620] skipping inversion-propagation across instance 'u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s0_reg0 ' with timing assertions on output pin 'O'
+INFO: [Synth 8-620] skipping inversion-propagation across instance 'u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s0_reg0 ' with timing assertions on output pin 'O'
+INFO: [Synth 8-620] skipping inversion-propagation across instance 'u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s0_reg0 ' with timing assertions on output pin 'O'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_dut/i_0/\u_dma/dma_wr_err_reg[7] )
+INFO: [Synth 8-620] skipping inversion-propagation across instance 'u_dut/i_0/\u_trng_monitor/u_entropy/u_ro2/s0_reg0 ' with timing assertions on output pin 'O'
+INFO: [Synth 8-620] skipping inversion-propagation across instance 'u_dut/i_0/\u_trng_monitor/u_entropy/u_ro1/s0_reg0 ' with timing assertions on output pin 'O'
+INFO: [Synth 8-620] skipping inversion-propagation across instance 'u_dut/i_0/\u_trng_monitor/u_entropy/u_ro3/s0_reg0 ' with timing assertions on output pin 'O'
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:07 ; elapsed = 00:02:38 . Memory (MB): peak = 2758.273 ; gain = 1761.402
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:17 ; elapsed = 00:02:54 . Memory (MB): peak = 2908.953 ; gain = 1912.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:17 ; elapsed = 00:02:54 . Memory (MB): peak = 2908.953 ; gain = 1912.082
+---------------------------------------------------------------------------------
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s7_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s7_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s7_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s7_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s6_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s6_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s6_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s6_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s5_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s5_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s5_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s5_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s4_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s4_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s4_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s4_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s3_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s3_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s3_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s3_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s2_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s2_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s2_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s2_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s1_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s1_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s1_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s1_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s0_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s0_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s0_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s0_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s8_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s8_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s8_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro2/s8_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s9_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s9_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s9_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s9_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s8_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s8_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s8_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s8_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s7_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s7_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s7_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s7_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s6_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s6_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s6_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s6_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s5_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s5_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s5_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s5_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s4_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s4_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s4_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s4_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s3_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s3_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s3_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s3_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s2_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s2_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s2_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s2_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s1_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s1_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s1_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s1_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s0_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s0_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s0_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s0_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s10_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s10_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s10_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro1/s10_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s5_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s5_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s5_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s5_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s4_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s4_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s4_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s4_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s3_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s3_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s3_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s3_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s2_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s2_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s2_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s2_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s1_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s1_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s1_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s1_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s0_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s0_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s0_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s0_inferred /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s6_inferred__0 /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s6_inferred__0 /in0
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s6_inferred /out
+      : u_dut/\u_sched/u_eng0/u_trng/u_entropy/u_ro3/s6_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s7_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s7_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s7_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s7_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s6_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s6_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s6_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s6_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s5_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s5_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s5_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s5_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s4_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s4_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s4_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s4_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s3_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s3_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s3_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s3_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s2_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s2_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s2_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s2_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s1_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s1_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s1_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s1_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s0_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s0_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s0_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s0_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s8_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s8_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s8_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro2/s8_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s9_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s9_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s9_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s9_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s8_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s8_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s8_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s8_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s7_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s7_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s7_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s7_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s6_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s6_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s6_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s6_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s5_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s5_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s5_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s5_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s4_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s4_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s4_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s4_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s3_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s3_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s3_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s3_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s2_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s2_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s2_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s2_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s1_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s1_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s1_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s1_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s0_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s0_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s0_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s0_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s10_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s10_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s10_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro1/s10_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s5_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s5_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s5_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s5_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s4_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s4_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s4_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s4_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s3_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s3_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s3_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s3_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s2_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s2_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s2_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s2_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s1_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s1_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s1_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s1_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s0_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s0_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s0_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s0_inferred /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s6_inferred__0 /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s6_inferred__0 /in0
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s6_inferred /out
+      : u_dut/\u_trng_monitor/u_entropy/u_ro3/s6_inferred /in0
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:20 ; elapsed = 00:02:58 . Memory (MB): peak = 2922.746 ; gain = 1925.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:20 ; elapsed = 00:02:58 . Memory (MB): peak = 2922.746 ; gain = 1925.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:21 ; elapsed = 00:02:59 . Memory (MB): peak = 2922.746 ; gain = 1925.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:21 ; elapsed = 00:02:59 . Memory (MB): peak = 2922.746 ; gain = 1925.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     2|
+|2     |CARRY4   |   345|
+|3     |LUT1     |   116|
+|4     |LUT2     |  1495|
+|5     |LUT3     |  1144|
+|6     |LUT4     |  1389|
+|7     |LUT5     |   874|
+|8     |LUT6     | 14524|
+|9     |MUXF7    |  3640|
+|10    |MUXF8    |  1416|
+|11    |RAM16X1D |   521|
+|12    |RAM32M   |    22|
+|13    |RAM64M   |   148|
+|14    |RAM64X1D |     4|
+|15    |FDCE     |  4207|
+|16    |FDPE     |  1223|
+|17    |FDRE     |  9268|
+|18    |FDSE     |   511|
+|19    |LDC      |    64|
+|20    |IBUF     |     1|
+|21    |OBUF     |     8|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:21 ; elapsed = 00:02:59 . Memory (MB): peak = 2922.746 ; gain = 1925.875
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 108 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:45 ; elapsed = 00:02:39 . Memory (MB): peak = 2922.746 ; gain = 1797.219
+Synthesis Optimization Complete : Time (s): cpu = 00:02:21 ; elapsed = 00:02:59 . Memory (MB): peak = 2938.914 ; gain = 1925.875
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.191 . Memory (MB): peak = 2950.961 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 6160 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15.xdc]
+WARNING: [Constraints 18-402] set_false_path: 'rst_n_reg/Q' is not a valid startpoint. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15.xdc:122]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+CRITICAL WARNING: [Constraints 18-513] set_false_path: list of objects specified for '-from' option contains no valid startpoints. Please check to make sure at least one valid startpoint is specified. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15.xdc:122]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-from [get_pins -hierarchical -quiet *jtag_*]'. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15.xdc:125]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-from [get_pins -hierarchical -quiet *dp_if_*]'. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15.xdc:126]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+Finished Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15.xdc]
+Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15_min.xdc]
+WARNING: [Constraints 18-619] A clock with name 'clk' already exists, overwriting the previous clock with the same name. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15_min.xdc:13]
+Finished Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/nysa7_board_v15_min.xdc]
+Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/clk_l400.xdc]
+WARNING: [Constraints 18-619] A clock with name 'clk' already exists, overwriting the previous clock with the same name. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/clk_l400.xdc:20]
+CRITICAL WARNING: [Designutils 20-1307] Command 'set_clock_waveform' is not supported in the xdc constraint file. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/clk_l400.xdc:23]
+CRITICAL WARNING: [Designutils 20-1307] Command 'set_clock_jitter' is not supported in the xdc constraint file. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/clk_l400.xdc:27]
+CRITICAL WARNING: [Designutils 20-1307] Command 'set_output_jitter' is not supported in the xdc constraint file. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/clk_l400.xdc:38]
+WARNING: [Vivado 12-584] No ports matched 'rst_n'. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/clk_l400.xdc:42]
+CRITICAL WARNING: [Vivado 12-4739] set_max_delay:No valid object(s) found for '-from [get_ports rst_n]'. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/clk_l400.xdc:42]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Common 17-142] Invalid property name 'clock_group'.  Please use the 'list_property' command to find properties supported by the target 'clock' object. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/clk_l400.xdc:45]
+Finished Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/clk_l400.xdc]
+Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc]
+WARNING: [Vivado 12-584] No ports matched 'rst_n'. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc:19]
+CRITICAL WARNING: [Common 17-158] 'name' can only be specified once. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc:19]
+CRITICAL WARNING: [Constraints 18-1055] Clock 'rst_release_path' completely overrides clock 'clk', which is referenced by one or more other constraints. Any constraints that refer to the overridden clock will be ignored.
+New: create_generated_clock -name rst_release_path -source [get_ports clk] -divide_by 1 [get_ports clk], [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc:23]
+Previous: create_clock -period 2.500 [get_ports clk], [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/clk_l400.xdc:20]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Designutils 20-1307] Command 'set_min_pulse_width' is not supported in the xdc constraint file. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc:29]
+WARNING: [Vivado 12-584] No ports matched 'rst_n'. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc:33]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc:33]
+WARNING: [Vivado 12-627] No clocks matched 'clk'. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc:33]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc:33]
+get_clocks: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 3516.664 ; gain = 556.395
+CRITICAL WARNING: [Vivado 12-4739] set_max_delay:No valid object(s) found for '-from [get_ports rst_n]'. [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc:33]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+Finished Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/rst.xdc]
+Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/tdc.xdc]
+Finished Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/tdc.xdc]
+Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/io_placeholder.xdc]
+Finished Parsing XDC File [C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto/constraints/io_placeholder.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 3516.664 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 759 instances were transformed.
+  LDC => LDCE: 64 instances
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 521 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 22 instances
+  RAM64M => RAM64M (RAMD64E(x4)): 148 instances
+  RAM64X1D => RAM64X1D (RAMD64E(x2)): 4 instances
+
+Synth Design complete | Checksum: 2b219cba
+INFO: [Common 17-83] Releasing license: Vivado_Synthesis
+338 Infos, 263 Warnings, 25 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:42 ; elapsed = 00:03:24 . Memory (MB): peak = 3516.664 ; gain = 2748.164
+# puts "=== POST-SYNTH REPORTS ==="
+=== POST-SYNTH REPORTS ===
+# report_utilization -file post_synth_util.rpt
+# report_timing -max_delay -file post_synth_timing.rpt
+ERROR: [Common 17-170] Unknown option '-max_delay', please type 'report_timing -help' for usage info.
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  1 12:49:47 2026...

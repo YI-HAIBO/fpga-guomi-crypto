@@ -1,0 +1,38 @@
+VCD info: dumpfile tb_bar_ctrl_v14.vcd opened for output.
+========================================================
+ bar_ctrl v1.4 Testbench - STATUS.err 清零语义
+========================================================
+[               29000] Reset done
+
+[Test 1] err_src_vld sets STATUS.err
+  [pre] STATUS.err = 0 (clean)
+  [DBG bar_ctrl] t=34000 err_src_vld=1 rid=0x22 code=0x02 idx=0
+  PASS: STATUS.err set to 1 after err_src_vld
+
+[Test 2] Write 0x10C CTRL_CLR_ERR clears STATUS.err
+  PASS: STATUS.err cleared by 0x10C
+  PASS: ERR_LOG[0] preserved ({rid=0x22, code=0x02})
+
+[Test 3] Write 0x108 CTRL_RESET clears err_flag + err_log
+  [DBG bar_ctrl] t=54000 err_src_vld=1 rid=0x33 code=0x03 idx=1
+  [pre] STATUS.err = 1 after re-inject
+  PASS: STATUS.err cleared by 0x108
+  PASS: ERR_LOG[0] cleared by CTRL_RESET
+
+[Test 4] CTRL_RESET pulses ctrl_reset output
+  PASS: ctrl_reset pulsed on 0x108 write
+
+[Test 5] W1C write 0 does NOT clear err_flag
+  [DBG bar_ctrl] t=84000 err_src_vld=1 rid=0x44 code=0x04 idx=0
+  [pre] STATUS.err = 1 after inject
+  PASS: STATUS.err preserved (W1C write 0 ignored)
+
+========================================================
+ Test Summary
+   PASS : 7
+   FAIL : 0
+========================================================
+ ALL TESTS PASSED
+C:\Users\Yi\WorkBuddy\2026-10-02-09-55-51\fpga-guomi-crypto\sim\subsys\tb_bar_ctrl_v14.v:311: $finish called at 204750 (1ps)
+
+--- STDERR ---

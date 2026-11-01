@@ -1,0 +1,7 @@
+=== CPA on SM4 round-1 S-box : C:\Users\Yi\WorkBuddy\2026-10-02-09-55-51\fpga-guomi-crypto\sca_harness\data\scea_unmasked ===
+  traces (1000, 144) | true rk0 = F12186F9
+  rk0 byte0 : recovered=39 true=F1 WRONG  (peak=0.582, 2nd=0.578, gap=0.005)
+  rk0 byte1 : recovered=52 true=21 WRONG  (peak=0.592, 2nd=0.576, gap=0.016)
+  rk0 byte2 : recovered=FC true=86 WRONG  (peak=0.609, 2nd=0.592, gap=0.016)
+  rk0 byte3 : recovered=16 true=F9 WRONG  (peak=0.581, 2nd=0.567, gap=0.014)
+  recovered rk0 = 3952FC16  ->  not fully recovered

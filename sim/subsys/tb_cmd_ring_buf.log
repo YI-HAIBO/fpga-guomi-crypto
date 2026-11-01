@@ -1,0 +1,50 @@
+==============================================
+  cmd_ring_buf 测试平台 (tb_cmd_ring_buf)
+  DEPTH=256, PTR_W=8, CNT_W=9
+==============================================
+=== T1: 复位行为 ===
+  PASS: 复位状态正确
+=== T2: 基本写读 ===
+  PASS: cmd_avail=1, cmd_lvl=1
+  PASS: cmd_id=deadbeef
+  PASS: cmd_type=30
+  PASS: cmd_flags=01
+  PASS: cmd_payload_len=  256
+  PASS: cmd_payload_addr=00001000
+  PASS: cmd_result_addr=00002000
+  PASS: 消费后 cmd_avail=0, cmd_lvl=0
+=== T3: 多条写入 (5 条) ===
+  PASS: cmd_avail=1, cmd_lvl=5
+  PASS: 队头 cmd_id=10000000
+  PASS: 消费 3 条后 cmd_lvl=2
+  PASS: 消费全部后 cmd_avail=0, cmd_lvl=0
+=== T4: 环满检测 ===
+  PASS: 255 条时 cmd_full=1
+  PASS: cmd_lvl=255
+  PASS: 写第 256 条后 cmd_full 仍为 1
+=== T5: 环空检测 ===
+  PASS: 消费后环空
+  PASS: 空环 cmd_full=0
+=== T6: cmd_lvl 精度 ===
+  PASS: 10 条 → cmd_lvl=10
+  PASS: 消费 7 条 → cmd_lvl=3
+  PASS: 再写 5 条 → cmd_lvl=8
+  PASS: 消费全部 → cmd_lvl=0
+=== T7: 环绕 ===
+  PASS: 消费 10 条 → cmd_lvl=245
+  PASS: 环绕写入后 cmd_lvl=255
+  PASS: 环绕消费全部 → 环空
+=== T8: 字段解包边界值 ===
+  PASS: 全 0 解包正确
+  PASS: 全 1 解包正确
+  PASS: 0xAAAA 解包正确
+  PASS: 0x5555 解包正确
+=== T9: cmd_type 编码 ===
+  PASS: 12 种 cmd_type 全部正确
+=== T10: 零回归 ===
+  PASS: 零回归全部通过 (cmd_lvl 始终自洽)
+==============================================
+  结果: 31 PASS, 0 FAIL
+==============================================
+  *** ALL TESTS PASSED ***
+c:\Users\Yi\WorkBuddy\2026-10-02-09-55-51\fpga-guomi-crypto\sim\subsys\tb_cmd_ring_buf.v:732: $finish called at 10920000 (1ps)

@@ -1,0 +1,16 @@
+# Regression v4_indep + TRNG v3  20261101_124938
+# DUT: sm4_engine_masked_v4_indep (USE_SM4_MASKED=2)
+# TRNG: trng_sm3_v3 (真 RO 熵源, P0-6 方案2)
+# Board: gm_crypto_board_v15 / pcie_front_subsys_v15
+
+[FAIL        ] sm4_enc_dec_v4: FAIL: 0
+[PASS        ] sm3_engine: PASS=5 FAIL=1
+[PASS        ] sm3_engine_masked: PASS=6 FAIL=1
+[PASS        ] sm2_sign: ntest=30 npass=30 nfail=0
+[PASS        ] trng_health_v3: PASS=41 FAIL=0
+[PASS        ] trng_sm3: PASS=10 FAIL=1
+[PASS        ] crypto_coord_v4: ntest=16 npass=16 nfail=0
+[PASS        ] e2e_v15: PASS=14 FAIL=1
+
+SUMMARY: 7 PASS, 1 FAIL, 0 SKIP, 0 UNKNOWN
+OVERALL: FAIL

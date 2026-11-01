@@ -1,0 +1,28 @@
+# =============================================================================
+# job_sbox_equiv.sby -- SymbiYosys BMC equivalence check for v4 masked SM4 S-box
+# =============================================================================
+# Proves: v4 masked S-box lookup (after unmasking) == standard SM4 S-box
+#
+#   tau_m = S(tmp) ^ mout8  (masked output)
+#   tau_m ^ mout8 = S(tmp)  (after unmasking)
+#
+# This is a pure combinational equivalence. BMC depth = 1.
+# =============================================================================
+
+[options]
+  mode: bmc
+  prove: 1
+
+[engines]
+  smtbmc: yices
+
+[script]
+  read_verilog -sv sbox_equiv_top.v
+  read_verilog -sv sbox_equiv_masked.v
+  read_verilog -sv sbox_equiv_ref.v
+
+  hierarchy -top sbox_equiv_top
+  proc; opt; techmap; opt
+
+  # Formal check: for all tmp, K, mout8: tau_m ^ mout8 == s_ref
+  assert -cover 1.0

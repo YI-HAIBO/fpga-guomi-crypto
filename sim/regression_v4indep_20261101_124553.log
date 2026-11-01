@@ -1,0 +1,29 @@
+# Regression v4_indep + TRNG v3  20261101_124553
+# DUT: sm4_engine_masked_v4_indep (USE_SM4_MASKED=2)
+# TRNG: trng_sm3_v3 (真 RO 熵源, P0-6 方案2)
+# Board: gm_crypto_board_v15 / pcie_front_subsys_v15
+
+[COMPILE_FAIL] sm4_enc_dec_v4: C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto\sim/sm4/tb_sm4_engine_masked_v4.v:28: error: Unknown module type: sm4_engine_masked_v4
+2 error(s) during elaboration.
+*** These modules were missing:
+        sm4_engine_masked_v4 referenced 1 times.
+***
+[FAIL        ] sm3_engine: FAIL: 0
+[COMPILE_FAIL] sm3_engine_masked: C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto\rtl/sm3/sm3_engine_masked.v:130: error: Unknown module type: mask_gen_lfsr
+C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto\rtl/sm3/sm3_engine_masked.v:130: error: Unknown module type: mask_gen_lfsr
+3 error(s) during elaboration.
+[COMPILE_FAIL] sm2_sign: C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto\rtl/sm2/sm2_modaddsub.v:19: error: 'sm2_modaddsub' has already been declared in this scope.
+C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto\rtl/sm2/sm2_modarith.v:55:      : It was declared here as a module.
+C:/Users/Yi/WorkBudd
+[FAIL        ] trng_health_v3: 
+[COMPILE_FAIL] trng_sm3: C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto\rtl/trng/trng_sm3.v:346: warning: extra digits given for sized hex constant.
+C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto\rtl/trng/trng_sm3.v:244: error: Unknown module type: sm3_engine
+2 error(s) during elaboration.
+*** Thes
+[PASS        ] crypto_coord_v4: ntest=16 npass=16 nfail=0
+[COMPILE_FAIL] e2e_v15: C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto\rtl/sm2/sm2_modaddsub.v:19: error: 'sm2_modaddsub' has already been declared in this scope.
+C:/Users/Yi/WorkBuddy/2026-10-02-09-55-51/fpga-guomi-crypto\rtl/sm2/sm2_modarith.v:55:      : It was declared here as a module.
+C:/Users/Yi/WorkBudd
+
+SUMMARY: 1 PASS, 2 FAIL, 0 SKIP, 5 UNKNOWN
+OVERALL: FAIL

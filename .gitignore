@@ -1,0 +1,43 @@
+# Documentation (not code/data)
+docs/
+
+# Vivado cache
+.Xil/
+*.bit
+
+# Waveforms
+*.vcd
+*.vvp
+
+# Build artifacts
+a.out
+dump.vcd
+
+# Project directories (Vivado projects)
+project_*/
+synth_*/
+bitstream/
+
+# Phase documentation
+phase0/
+phase1/
+
+# Large trace data (.npy files > 10MB)
+sca_harness/data/mrs_a*/
+sca_harness/data/mrs_a*_n*/
+sca_harness/data/scea*/
+sca_harness/data/scea_masked*/
+sca_harness/data/scea_unmasked*/
+sca_harness/data/smoke*/
+sca_harness/data/synth*/
+
+# Keep only summary JSON data
+!sca_harness/data/*.json
+!sca_harness/data/*.png
+
+# Session data
+.workbuddy/
+
+# OS files
+.DS_Store
+Thumbs.db
