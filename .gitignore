@@ -41,3 +41,14 @@ sca_harness/data/synth*/
 # OS files
 .DS_Store
 Thumbs.db
+
+# LaTeX build artifacts inside submission packages
+submission_*/**/*.aux
+submission_*/**/*.bbl
+submission_*/**/*.blg
+submission_*/**/*.log
+submission_*/**/*.out
+submission_*/**/*.synctex
+submission_*/**/*.toc
+submission_*/**/*.fls
+submission_*/**/*.fdb_latexmk

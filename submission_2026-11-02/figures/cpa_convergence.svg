@@ -1,0 +1,38 @@
+<svg viewBox="0 0 680 340" width="680" height="340" role="img" aria-label="CPA收敛性对比">
+  <title>CPA收敛性对比：共享掩码 vs 独立掩码</title>
+  <desc>展示共享掩码方案CPA在N=50时GE降至1，独立掩码方案CPA全程不收敛</desc>
+  <line x1="60" y1="280" x2="640" y2="280" stroke="#888780" stroke-width="1"/>
+  <line x1="60" y1="280" x2="60" y2="30" stroke="#888780" stroke-width="1"/>
+  <text x="50" y="284" text-anchor="end" font-family="sans-serif" font-size="11" fill="#5F5E5A">0</text>
+  <text x="50" y="194" text-anchor="end" font-family="sans-serif" font-size="11" fill="#5F5E5A">0.5</text>
+  <text x="50" y="104" text-anchor="end" font-family="sans-serif" font-size="11" fill="#5F5E5A">1.0</text>
+  <text x="30" y="160" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="500" fill="#444441" transform="rotate(-90,30,160)">GE (猜测熵)</text>
+  <text x="60" y="300" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#5F5E5A">0</text>
+  <text x="176" y="300" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#5F5E5A">25</text>
+  <text x="292" y="300" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#5F5E5A">50</text>
+  <text x="408" y="300" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#5F5E5A">75</text>
+  <text x="524" y="300" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#5F5E5A">100</text>
+  <text x="640" y="300" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#5F5E5A"> traces (×10²)</text>
+  <text x="350" y="330" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="500" fill="#444441">Trace 数 N</text>
+
+  <!-- GE=1 threshold line -->
+  <line x1="60" y1="104" x2="640" y2="104" stroke="#E24B4A" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <text x="645" y="108" font-family="sans-serif" font-size="10" fill="#E24B4A">GE=1</text>
+
+  <!-- Shared masking GE curve (drops to 1 at N=50) -->
+  <polyline points="60,280 120,280 176,280 200,280 230,280 260,280 292,104 350,104 408,104 524,104 640,104"
+    fill="none" stroke="#E24B4A" stroke-width="2.5"/>
+  <circle cx="292" cy="104" r="5" fill="#E24B4A"/>
+  <text x="292" y="94" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="500" fill="#A32D2D">N=50, GE=1</text>
+
+  <!-- Independent masking GE curve (stays high) -->
+  <polyline points="60,280 120,280 176,280 230,280 292,280 350,280 408,280 470,280 524,280 640,280"
+    fill="none" stroke="#0F6E56" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <text x="500" y="270" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#085041">全程不收敛</text>
+
+  <!-- Legend -->
+  <rect x="420" y="40" width="14" height="3" fill="#E24B4A"/>
+  <text x="440" y="45" font-family="sans-serif" font-size="11" fill="#5F5E5A">共享掩码 (CPA 6/6)</text>
+  <line x1="420" y1="60" x2="434" y2="60" stroke="#0F6E56" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="440" y="65" font-family="sans-serif" font-size="11" fill="#5F5E5A">独立掩码 (CPA 0/6)</text>
+</svg>
